@@ -1,0 +1,1051 @@
+{
+  "project": "lumi-and-the-lost-star",
+  "duration": 72,
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "frames": 1728
+  },
+  "story": {
+    "starFall": 13,
+    "starLand": 14.05,
+    "firstLift": 25.2,
+    "secondLift": 28.4,
+    "idea": 31.15,
+    "friendsAt": 32.2,
+    "liftOff": 38,
+    "cloudPass": 41.4,
+    "release": 48,
+    "burst": 50.6,
+    "captionEnd": 56.2,
+    "landHome": 61.6,
+    "title": 66
+  },
+  "scenes": [
+    {
+      "index": 1,
+      "id": "meadow",
+      "start": 0,
+      "end": 12,
+      "frames": 288
+    },
+    {
+      "index": 2,
+      "id": "fall",
+      "start": 12,
+      "end": 24,
+      "frames": 288
+    },
+    {
+      "index": 3,
+      "id": "heavy",
+      "start": 24,
+      "end": 36,
+      "frames": 288
+    },
+    {
+      "index": 4,
+      "id": "lift",
+      "start": 36,
+      "end": 48,
+      "frames": 288
+    },
+    {
+      "index": 5,
+      "id": "release",
+      "start": 48,
+      "end": 60,
+      "frames": 288
+    },
+    {
+      "index": 6,
+      "id": "night",
+      "start": 60,
+      "end": 72,
+      "frames": 288
+    }
+  ],
+  "transitions": [
+    {
+      "t": 12,
+      "dur": 0.9
+    },
+    {
+      "t": 24,
+      "dur": 0.8
+    },
+    {
+      "t": 36,
+      "dur": 0.9
+    },
+    {
+      "t": 48,
+      "dur": 0.7
+    },
+    {
+      "t": 60,
+      "dur": 1.4
+    }
+  ],
+  "fades": {
+    "in": {
+      "from": 0,
+      "dur": 1.4
+    },
+    "out": {
+      "at": 70.6,
+      "dur": 1.4
+    }
+  },
+  "captions": [
+    {
+      "start": 1.2,
+      "end": 7,
+      "text": "In a quiet meadow, under a silver moon…"
+    },
+    {
+      "start": 7.4,
+      "end": 11.4,
+      "text": "lived a little firefly named Lumi."
+    },
+    {
+      "start": 16.8,
+      "end": 20.4,
+      "text": "One night, a star slipped out of the sky."
+    },
+    {
+      "start": 20.7,
+      "end": 24.2,
+      "text": "It landed with a bump."
+    },
+    {
+      "start": 25.3,
+      "end": 30.6,
+      "text": "The star was far too heavy for one little bug."
+    },
+    {
+      "start": 31.9,
+      "end": 35.7,
+      "text": "So Lumi called her friends."
+    },
+    {
+      "start": 37.4,
+      "end": 42.2,
+      "text": "Together, they lifted it higher…"
+    },
+    {
+      "start": 42.6,
+      "end": 47.3,
+      "text": "…higher than the tallest tree."
+    },
+    {
+      "start": 50.9,
+      "end": 55.9,
+      "text": "And the sky lit up like a smile."
+    },
+    {
+      "start": 62.4,
+      "end": 66,
+      "text": "Goodnight, little star."
+    }
+  ],
+  "cues": [
+    {
+      "t": 0.6,
+      "frame": 14,
+      "sound": "crickets",
+      "gain": 0.1,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 2.05,
+      "frame": 49,
+      "sound": "flutter",
+      "gain": 0.2,
+      "pan": -0.35,
+      "extra": null
+    },
+    {
+      "t": 4.55,
+      "frame": 109,
+      "sound": "flutter",
+      "gain": 0.16,
+      "pan": -0.1,
+      "extra": null
+    },
+    {
+      "t": 6.4,
+      "frame": 154,
+      "sound": "flutter",
+      "gain": 0.14,
+      "pan": 0.05,
+      "extra": null
+    },
+    {
+      "t": 6.95,
+      "frame": 167,
+      "sound": "twinkle",
+      "gain": 0.14,
+      "pan": -0.05,
+      "extra": null
+    },
+    {
+      "t": 13.02,
+      "frame": 312,
+      "sound": "whooshBig",
+      "gain": 0.42,
+      "pan": 0.25,
+      "extra": 1
+    },
+    {
+      "t": 14.02,
+      "frame": 336,
+      "sound": "impact",
+      "gain": 0.5,
+      "pan": 0.15,
+      "extra": null
+    },
+    {
+      "t": 14.2,
+      "frame": 341,
+      "sound": "dust",
+      "gain": 0.24,
+      "pan": 0.15,
+      "extra": null
+    },
+    {
+      "t": 14.6,
+      "frame": 350,
+      "sound": "flutter",
+      "gain": 0.18,
+      "pan": -0.3,
+      "extra": null
+    },
+    {
+      "t": 16.4,
+      "frame": 394,
+      "sound": "flutter",
+      "gain": 0.14,
+      "pan": -0.15,
+      "extra": null
+    },
+    {
+      "t": 18.55,
+      "frame": 445,
+      "sound": "flicker",
+      "gain": 0.2,
+      "pan": 0.1,
+      "extra": null
+    },
+    {
+      "t": 19.1,
+      "frame": 458,
+      "sound": "flicker",
+      "gain": 0.16,
+      "pan": 0.1,
+      "extra": null
+    },
+    {
+      "t": 21.4,
+      "frame": 514,
+      "sound": "strain",
+      "gain": 0.2,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 22.6,
+      "frame": 542,
+      "sound": "thud",
+      "gain": 0.3,
+      "pan": 0.05,
+      "extra": null
+    },
+    {
+      "t": 23.3,
+      "frame": 559,
+      "sound": "sigh",
+      "gain": 0.18,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 25.3,
+      "frame": 607,
+      "sound": "strain",
+      "gain": 0.26,
+      "pan": 0,
+      "extra": 1.1
+    },
+    {
+      "t": 26.55,
+      "frame": 637,
+      "sound": "thud",
+      "gain": 0.34,
+      "pan": 0.05,
+      "extra": null
+    },
+    {
+      "t": 27.2,
+      "frame": 653,
+      "sound": "flutter",
+      "gain": 0.14,
+      "pan": -0.1,
+      "extra": null
+    },
+    {
+      "t": 28.45,
+      "frame": 683,
+      "sound": "strain",
+      "gain": 0.3,
+      "pan": 0,
+      "extra": 1.2
+    },
+    {
+      "t": 29.85,
+      "frame": 716,
+      "sound": "thud",
+      "gain": 0.4,
+      "pan": 0.05,
+      "extra": null
+    },
+    {
+      "t": 30.6,
+      "frame": 734,
+      "sound": "sigh",
+      "gain": 0.24,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 31.15,
+      "frame": 748,
+      "sound": "idea",
+      "gain": 0.3,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 31.8,
+      "frame": 763,
+      "sound": "pulse",
+      "gain": 0.26,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 32.2,
+      "frame": 773,
+      "sound": "pop",
+      "gain": 0.26,
+      "pan": -0.4,
+      "extra": 0
+    },
+    {
+      "t": 32.85,
+      "frame": 788,
+      "sound": "pop",
+      "gain": 0.24,
+      "pan": -0.15,
+      "extra": 1
+    },
+    {
+      "t": 33.45,
+      "frame": 803,
+      "sound": "pop",
+      "gain": 0.24,
+      "pan": 0.15,
+      "extra": 2
+    },
+    {
+      "t": 34,
+      "frame": 816,
+      "sound": "pop",
+      "gain": 0.22,
+      "pan": 0.35,
+      "extra": 3
+    },
+    {
+      "t": 34.55,
+      "frame": 829,
+      "sound": "pop",
+      "gain": 0.22,
+      "pan": -0.05,
+      "extra": 4
+    },
+    {
+      "t": 35.1,
+      "frame": 842,
+      "sound": "chime",
+      "gain": 0.16,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 36.3,
+      "frame": 871,
+      "sound": "thread",
+      "gain": 0.2,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 38,
+      "frame": 912,
+      "sound": "heave",
+      "gain": 0.4,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 38.3,
+      "frame": 919,
+      "sound": "liftoff",
+      "gain": 0.34,
+      "pan": 0,
+      "extra": 2.2
+    },
+    {
+      "t": 41.4,
+      "frame": 994,
+      "sound": "windGust",
+      "gain": 0.22,
+      "pan": 0.2,
+      "extra": null
+    },
+    {
+      "t": 45.2,
+      "frame": 1085,
+      "sound": "shimmer",
+      "gain": 0.18,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 48,
+      "frame": 1152,
+      "sound": "chime",
+      "gain": 0.3,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 49.6,
+      "frame": 1190,
+      "sound": "riser",
+      "gain": 0.22,
+      "pan": 0,
+      "extra": 1
+    },
+    {
+      "t": 50.6,
+      "frame": 1214,
+      "sound": "burst",
+      "gain": 0.55,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 51.2,
+      "frame": 1229,
+      "sound": "sparkleCascade",
+      "gain": 0.34,
+      "pan": 0,
+      "extra": 2.4
+    },
+    {
+      "t": 52.4,
+      "frame": 1258,
+      "sound": "flutter",
+      "gain": 0.16,
+      "pan": -0.4,
+      "extra": null
+    },
+    {
+      "t": 53.2,
+      "frame": 1277,
+      "sound": "flutter",
+      "gain": 0.16,
+      "pan": 0.4,
+      "extra": null
+    },
+    {
+      "t": 56.2,
+      "frame": 1349,
+      "sound": "chime",
+      "gain": 0.2,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 61.6,
+      "frame": 1478,
+      "sound": "yawn",
+      "gain": 0.22,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 63.6,
+      "frame": 1526,
+      "sound": "sigh",
+      "gain": 0.14,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 66,
+      "frame": 1584,
+      "sound": "titleChime",
+      "gain": 0.3,
+      "pan": 0,
+      "extra": null
+    },
+    {
+      "t": 69.8,
+      "frame": 1675,
+      "sound": "twinkle",
+      "gain": 0.16,
+      "pan": 0.1,
+      "extra": null
+    }
+  ],
+  "beds": [
+    [
+      0,
+      72,
+      "crickets",
+      0.045
+    ],
+    [
+      12.5,
+      24,
+      "nightWind",
+      0.05
+    ],
+    [
+      36.5,
+      48,
+      "highWind",
+      0.06
+    ],
+    [
+      48,
+      60,
+      "highWind",
+      0.045
+    ],
+    [
+      60,
+      72,
+      "nightWind",
+      0.035
+    ]
+  ],
+  "music": {
+    "bpm": 80,
+    "bars": 24,
+    "beatsPerBar": 4,
+    "chords": [
+      "F",
+      "Dm",
+      "Bb",
+      "C",
+      "F",
+      "Dm",
+      "Bb",
+      "C",
+      "Bb",
+      "C",
+      "Dm",
+      "Bb",
+      "F",
+      "Bb",
+      "C",
+      "C",
+      "F",
+      "Bb",
+      "C",
+      "Dm",
+      "Bb",
+      "F",
+      "C",
+      "F"
+    ],
+    "melody": [
+      [
+        1,
+        0,
+        1.5,
+        76,
+        0.55
+      ],
+      [
+        1,
+        2,
+        1,
+        72,
+        0.45
+      ],
+      [
+        1,
+        3,
+        1,
+        69,
+        0.4
+      ],
+      [
+        2,
+        0,
+        1.5,
+        77,
+        0.5
+      ],
+      [
+        2,
+        2,
+        1,
+        72,
+        0.42
+      ],
+      [
+        2,
+        3,
+        1,
+        69,
+        0.38
+      ],
+      [
+        3,
+        0,
+        1.5,
+        74,
+        0.52
+      ],
+      [
+        3,
+        2,
+        1,
+        70,
+        0.42
+      ],
+      [
+        3,
+        3,
+        1,
+        65,
+        0.36
+      ],
+      [
+        4,
+        0,
+        1,
+        72,
+        0.6
+      ],
+      [
+        4,
+        1,
+        1,
+        76,
+        0.55
+      ],
+      [
+        4,
+        2,
+        2,
+        79,
+        0.6
+      ],
+      [
+        5,
+        0,
+        1.5,
+        77,
+        0.55
+      ],
+      [
+        5,
+        2,
+        1,
+        74,
+        0.5
+      ],
+      [
+        5,
+        3,
+        1,
+        72,
+        0.45
+      ],
+      [
+        6,
+        0,
+        1.5,
+        74,
+        0.55
+      ],
+      [
+        6,
+        2,
+        1,
+        70,
+        0.48
+      ],
+      [
+        6,
+        3,
+        1,
+        74,
+        0.5
+      ],
+      [
+        7,
+        0,
+        2,
+        72,
+        0.55
+      ],
+      [
+        7,
+        2,
+        1,
+        67,
+        0.42
+      ],
+      [
+        7,
+        3,
+        1,
+        69,
+        0.44
+      ],
+      [
+        8,
+        0,
+        1,
+        70,
+        0.6
+      ],
+      [
+        8,
+        1,
+        1,
+        74,
+        0.55
+      ],
+      [
+        8,
+        2,
+        1.5,
+        77,
+        0.6
+      ],
+      [
+        8,
+        3.5,
+        0.5,
+        79,
+        0.45
+      ],
+      [
+        9,
+        0,
+        1.5,
+        76,
+        0.6
+      ],
+      [
+        9,
+        2,
+        1,
+        72,
+        0.5
+      ],
+      [
+        9,
+        3,
+        1,
+        74,
+        0.5
+      ],
+      [
+        10,
+        0,
+        1,
+        74,
+        0.55
+      ],
+      [
+        10,
+        1,
+        1,
+        77,
+        0.55
+      ],
+      [
+        10,
+        2,
+        2,
+        81,
+        0.62
+      ],
+      [
+        11,
+        0,
+        1.5,
+        79,
+        0.6
+      ],
+      [
+        11,
+        2,
+        1,
+        77,
+        0.5
+      ],
+      [
+        11,
+        3,
+        1,
+        74,
+        0.5
+      ],
+      [
+        12,
+        0,
+        2,
+        77,
+        0.62
+      ],
+      [
+        12,
+        2,
+        1,
+        81,
+        0.6
+      ],
+      [
+        12,
+        3,
+        1,
+        79,
+        0.55
+      ],
+      [
+        13,
+        0,
+        1.5,
+        77,
+        0.6
+      ],
+      [
+        13,
+        2,
+        1,
+        74,
+        0.5
+      ],
+      [
+        13,
+        3,
+        1,
+        77,
+        0.55
+      ],
+      [
+        14,
+        0,
+        1.5,
+        79,
+        0.62
+      ],
+      [
+        14,
+        2,
+        1,
+        76,
+        0.55
+      ],
+      [
+        14,
+        3,
+        1,
+        72,
+        0.5
+      ],
+      [
+        15,
+        0,
+        2,
+        74,
+        0.58
+      ],
+      [
+        15,
+        2,
+        2,
+        76,
+        0.6
+      ],
+      [
+        16,
+        0,
+        1,
+        84,
+        0.68
+      ],
+      [
+        16,
+        1,
+        1,
+        81,
+        0.6
+      ],
+      [
+        16,
+        2,
+        2,
+        77,
+        0.62
+      ],
+      [
+        17,
+        0,
+        1,
+        82,
+        0.65
+      ],
+      [
+        17,
+        1,
+        1,
+        79,
+        0.58
+      ],
+      [
+        17,
+        2,
+        2,
+        74,
+        0.55
+      ],
+      [
+        18,
+        0,
+        1,
+        84,
+        0.68
+      ],
+      [
+        18,
+        1,
+        1,
+        79,
+        0.6
+      ],
+      [
+        18,
+        2,
+        1,
+        76,
+        0.55
+      ],
+      [
+        18,
+        3,
+        1,
+        79,
+        0.58
+      ],
+      [
+        19,
+        0,
+        2,
+        81,
+        0.66
+      ],
+      [
+        19,
+        2,
+        1,
+        77,
+        0.55
+      ],
+      [
+        19,
+        3,
+        1,
+        74,
+        0.55
+      ],
+      [
+        20,
+        0,
+        1.5,
+        77,
+        0.55
+      ],
+      [
+        20,
+        2,
+        1,
+        74,
+        0.45
+      ],
+      [
+        20,
+        3,
+        1,
+        72,
+        0.42
+      ],
+      [
+        21,
+        0,
+        1.5,
+        77,
+        0.5
+      ],
+      [
+        21,
+        2,
+        1,
+        81,
+        0.45
+      ],
+      [
+        22,
+        0,
+        2,
+        79,
+        0.48
+      ],
+      [
+        22,
+        2,
+        1,
+        76,
+        0.4
+      ],
+      [
+        22,
+        3,
+        1,
+        72,
+        0.4
+      ],
+      [
+        23,
+        0,
+        3.5,
+        77,
+        0.5
+      ]
+    ],
+    "beatSeconds": 0.75,
+    "barSeconds": 3
+  }
+}

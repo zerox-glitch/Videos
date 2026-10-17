@@ -22,3 +22,18 @@ npx skills add Miftahul-Islam-Efaz/Motion-graphics-skill
 
 Every frame is drawn in code (Canvas/Skia, deterministic `f(t)`), piped to FFmpeg,
 and scored with 40 procedurally synthesised sound cues. No footage, no stock, no samples.
+
+## Lumi & the Lost Star
+
+[`lumi-and-the-lost-star/`](lumi-and-the-lost-star) is a 72-second wordless storybook cartoon
+for ages 3–7, also made with the Motion Video Director skill: a firefly finds a fallen star,
+and her friends help carry it home.
+
+- **Watch:** [`lumi-and-the-lost-star/renders/final/Lumi and the Lost Star v2.mp4`](lumi-and-the-lost-star/renders/final/Lumi%20and%20the%20Lost%20Star%20v2.mp4)
+- **Quick look:** [`lumi-and-the-lost-star/demo-preview.gif`](lumi-and-the-lost-star/demo-preview.gif)
+- **Poster:** [`lumi-and-the-lost-star/poster.jpg`](lumi-and-the-lost-star/poster.jpg)
+- **How it was built:** [`lumi-and-the-lost-star/README.md`](lumi-and-the-lost-star/README.md)
+
+1920×1080 · 24 fps · 1:12 · H.264 + AAC · −13.9 LUFS.
+Everything is drawn and scored in code: a 24-bar music-box lullaby, 45 designed sound cues,
+no samples, no stock, no TTS.
