@@ -1,0 +1,403 @@
+{
+  "project": "motion-video-director-demo",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 26,
+    "frames": 780
+  },
+  "scenes": [
+    {
+      "index": 1,
+      "id": "hook",
+      "start": 0,
+      "end": 3,
+      "frames": 90
+    },
+    {
+      "index": 2,
+      "id": "notimeline",
+      "start": 3,
+      "end": 7,
+      "frames": 120
+    },
+    {
+      "index": 3,
+      "id": "math",
+      "start": 7,
+      "end": 12,
+      "frames": 150
+    },
+    {
+      "index": 4,
+      "id": "triptych",
+      "start": 12,
+      "end": 18,
+      "frames": 180
+    },
+    {
+      "index": 5,
+      "id": "pipeline",
+      "start": 18,
+      "end": 22,
+      "frames": 120
+    },
+    {
+      "index": 6,
+      "id": "endcard",
+      "start": 22,
+      "end": 26,
+      "frames": 120
+    }
+  ],
+  "cuts": [
+    {
+      "t": 3,
+      "type": "circle",
+      "color": "#F2EEE4"
+    },
+    {
+      "t": 7,
+      "type": "shutter",
+      "color": "#0A0C0F"
+    },
+    {
+      "t": 12,
+      "type": "circle",
+      "color": "#C7FF3E"
+    },
+    {
+      "t": 18,
+      "type": "shutter",
+      "color": "#0A0C0F"
+    },
+    {
+      "t": 22,
+      "type": "circle",
+      "color": "#C7FF3E"
+    }
+  ],
+  "cues": [
+    {
+      "t": 0.08,
+      "frame": 2,
+      "sound": "impact",
+      "gain": 0.55,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 0.72,
+      "frame": 22,
+      "sound": "impact",
+      "gain": 0.3,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 0.96,
+      "frame": 29,
+      "sound": "tick",
+      "gain": 0.26,
+      "pan": -0.2,
+      "duration": null
+    },
+    {
+      "t": 2.52,
+      "frame": 76,
+      "sound": "chime",
+      "gain": 0.24,
+      "pan": 0.1,
+      "duration": null
+    },
+    {
+      "t": 2.7,
+      "frame": 81,
+      "sound": "whoosh",
+      "gain": 0.4,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 3.12,
+      "frame": 94,
+      "sound": "tick",
+      "gain": 0.28,
+      "pan": -0.15,
+      "duration": null
+    },
+    {
+      "t": 4.36,
+      "frame": 131,
+      "sound": "thud",
+      "gain": 0.3,
+      "pan": -0.1,
+      "duration": null
+    },
+    {
+      "t": 4.58,
+      "frame": 137,
+      "sound": "thud",
+      "gain": 0.26,
+      "pan": 0.15,
+      "duration": null
+    },
+    {
+      "t": 5.3,
+      "frame": 159,
+      "sound": "tick",
+      "gain": 0.26,
+      "pan": 0.1,
+      "duration": null
+    },
+    {
+      "t": 5.92,
+      "frame": 178,
+      "sound": "chime",
+      "gain": 0.2,
+      "pan": 0.2,
+      "duration": null
+    },
+    {
+      "t": 6.72,
+      "frame": 202,
+      "sound": "whoosh",
+      "gain": 0.42,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 7.1,
+      "frame": 213,
+      "sound": "tick",
+      "gain": 0.26,
+      "pan": -0.2,
+      "duration": null
+    },
+    {
+      "t": 7.36,
+      "frame": 221,
+      "sound": "tick",
+      "gain": 0.2,
+      "pan": 0.2,
+      "duration": null
+    },
+    {
+      "t": 8.02,
+      "frame": 241,
+      "sound": "draw",
+      "gain": 0.26,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 10.15,
+      "frame": 305,
+      "sound": "chime",
+      "gain": 0.22,
+      "pan": 0.1,
+      "duration": null
+    },
+    {
+      "t": 11.64,
+      "frame": 349,
+      "sound": "whoosh",
+      "gain": 0.44,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 12.1,
+      "frame": 363,
+      "sound": "tick",
+      "gain": 0.26,
+      "pan": -0.2,
+      "duration": null
+    },
+    {
+      "t": 12.72,
+      "frame": 382,
+      "sound": "tick",
+      "gain": 0.24,
+      "pan": -0.3,
+      "duration": null
+    },
+    {
+      "t": 13.14,
+      "frame": 394,
+      "sound": "tick",
+      "gain": 0.24,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 13.56,
+      "frame": 407,
+      "sound": "tick",
+      "gain": 0.24,
+      "pan": 0.3,
+      "duration": null
+    },
+    {
+      "t": 15.62,
+      "frame": 469,
+      "sound": "draw",
+      "gain": 0.22,
+      "pan": 0,
+      "duration": 0.9
+    },
+    {
+      "t": 15.95,
+      "frame": 479,
+      "sound": "tick",
+      "gain": 0.14,
+      "pan": -0.2,
+      "duration": null
+    },
+    {
+      "t": 16.35,
+      "frame": 491,
+      "sound": "tick",
+      "gain": 0.12,
+      "pan": 0.1,
+      "duration": null
+    },
+    {
+      "t": 16.85,
+      "frame": 506,
+      "sound": "tick",
+      "gain": 0.12,
+      "pan": 0.25,
+      "duration": null
+    },
+    {
+      "t": 17.35,
+      "frame": 521,
+      "sound": "tick",
+      "gain": 0.14,
+      "pan": -0.1,
+      "duration": null
+    },
+    {
+      "t": 17.55,
+      "frame": 527,
+      "sound": "riser",
+      "gain": 0.26,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 18.05,
+      "frame": 542,
+      "sound": "impact",
+      "gain": 0.34,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 18.42,
+      "frame": 553,
+      "sound": "tick",
+      "gain": 0.22,
+      "pan": -0.2,
+      "duration": null
+    },
+    {
+      "t": 18.78,
+      "frame": 563,
+      "sound": "tick",
+      "gain": 0.22,
+      "pan": -0.1,
+      "duration": null
+    },
+    {
+      "t": 19.14,
+      "frame": 574,
+      "sound": "tick",
+      "gain": 0.22,
+      "pan": 0.1,
+      "duration": null
+    },
+    {
+      "t": 19.5,
+      "frame": 585,
+      "sound": "tick",
+      "gain": 0.22,
+      "pan": 0.2,
+      "duration": null
+    },
+    {
+      "t": 20.15,
+      "frame": 605,
+      "sound": "type",
+      "gain": 0.16,
+      "pan": 0,
+      "duration": 0.95
+    },
+    {
+      "t": 20.72,
+      "frame": 622,
+      "sound": "chime",
+      "gain": 0.24,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 21.58,
+      "frame": 647,
+      "sound": "whoosh",
+      "gain": 0.42,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 22.02,
+      "frame": 661,
+      "sound": "impact",
+      "gain": 0.52,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 22.18,
+      "frame": 665,
+      "sound": "tick",
+      "gain": 0.24,
+      "pan": 0.1,
+      "duration": null
+    },
+    {
+      "t": 23.46,
+      "frame": 704,
+      "sound": "tick",
+      "gain": 0.18,
+      "pan": -0.1,
+      "duration": null
+    },
+    {
+      "t": 23.62,
+      "frame": 709,
+      "sound": "tick",
+      "gain": 0.18,
+      "pan": 0.2,
+      "duration": null
+    },
+    {
+      "t": 24.12,
+      "frame": 724,
+      "sound": "chime",
+      "gain": 0.22,
+      "pan": 0,
+      "duration": null
+    },
+    {
+      "t": 24.95,
+      "frame": 749,
+      "sound": "shimmer",
+      "gain": 0.24,
+      "pan": 0,
+      "duration": null
+    }
+  ]
+}

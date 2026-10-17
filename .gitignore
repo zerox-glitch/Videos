@@ -1,0 +1,10 @@
+# Third-party skill (commercial single-user licence — must not be redistributed).
+# Install locally with:
+#   npx skills add Miftahul-Islam-Efaz/Motion-graphics-skill
+.claude/skills/motion-video-director/
+
+# generated / bulky
+node_modules/
+cache/
+.DS_Store
+Thumbs.db

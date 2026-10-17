@@ -1,0 +1,9 @@
+# generated / bulky
+node_modules/
+cache/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+!renders/logs/*.log
