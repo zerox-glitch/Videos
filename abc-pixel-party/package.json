@@ -1,0 +1,14 @@
+{
+  "name": "abc-pixel-party",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ABC Song - Pixel Alphabet Party (nursery rhyme, procedural pixel art)",
+  "scripts": {
+    "stills": "node src/render.mjs --stills",
+    "render": "node src/render.mjs --from 0 --to 96 --fps 30 --out renders/final"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.80"
+  }
+}

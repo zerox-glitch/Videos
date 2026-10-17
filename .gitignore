@@ -23,3 +23,8 @@ wiggle-and-giggle/assets/vo/*_p.wav
 
 # NEON GENESIS — bulky intermediate renders
 neon-genesis/renders/
+
+# ABC Pixel Party — bulky / regenerable
+abc-pixel-party/renders/previews/
+abc-pixel-party/assets/*.wav
+abc-pixel-party/assets/vo/*_p.wav
