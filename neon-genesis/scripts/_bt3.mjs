@@ -1,0 +1,12 @@
+import { createCanvas } from '@napi-rs/canvas';
+const c = createCanvas(200,100); const g=c.getContext('2d');
+g.fillStyle='#000'; g.fillRect(0,0,200,100); g.fillStyle='#fff'; g.fillRect(90,40,20,20);
+const rd=(ctx,x,y)=>{const d=ctx.getImageData(x,y,1,1).data;return d[0]};
+const t = createCanvas(24,12); const tc=t.getContext('2d');
+tc.imageSmoothingEnabled = true; tc.imageSmoothingQuality='high';
+tc.drawImage(c,0,0,24,12);
+console.log('tiny: x=9..15 y=6:', [7,8,9,10,11,12,13,14,15].map(x=>rd(tc,x,6)));
+const up=createCanvas(200,100); const uc=up.getContext('2d');
+uc.imageSmoothingEnabled=true; uc.imageSmoothingQuality='high';
+uc.drawImage(t,0,0,200,100);
+console.log('up y=50:', [60,65,70,72,75,80,85,90,95,100,110,120,125,130,140].map(x=>rd(uc,x,50)));

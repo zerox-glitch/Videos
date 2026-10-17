@@ -1,0 +1,11 @@
+import { createCanvas } from '@napi-rs/canvas';
+import { bloom, glow } from '../src/lib/gfx.js';
+const c = createCanvas(400,200); const g = c.getContext('2d');
+g.fillStyle='#000'; g.fillRect(0,0,400,200);
+g.fillStyle='#fff'; g.fillRect(180,80,40,40);
+const before = g.getImageData(0,0,1,1);
+bloom(g,400,200,{strength:1,threshold:0.5,radius:14});
+const px = (x,y)=>{const d=g.getImageData(x,y,1,1).data;return [d[0],d[1],d[2],d[3]]};
+console.log('filter prop:', typeof g.filter, JSON.stringify(g.filter));
+console.log('near highlight at 150,100:', px(150,100));
+console.log('far at 20,20:', px(20,20));

@@ -12,3 +12,6 @@ Thumbs.db
 # project deps
 lumi-and-the-lost-star/node_modules/
 node_modules
+
+neon-genesis/renders/previews/
+neon-genesis/renders/qa/

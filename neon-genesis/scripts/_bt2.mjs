@@ -1,0 +1,18 @@
+import { createCanvas } from '@napi-rs/canvas';
+const c = createCanvas(400,200); const g = c.getContext('2d');
+g.fillStyle='#000'; g.fillRect(0,0,400,200);
+g.fillStyle='#fff'; g.fillRect(180,80,40,40);
+const bw=100,bh=50;
+const a = createCanvas(bw,bh); const ac=a.getContext('2d');
+ac.drawImage(c,0,0,bw,bh);
+const rd=(ctx,x,y)=>{const d=ctx.getImageData(x,y,1,1).data;return [d[0],d[1],d[2],d[3]]};
+console.log('a at block', rd(ac,50,25), 'a at 10,10', rd(ac,10,10));
+const s=createCanvas(25,12); const sc=s.getContext('2d');
+sc.drawImage(a,0,0,25,12);
+console.log('s block', rd(sc,12,6));
+ac.globalCompositeOperation='multiply';
+ac.drawImage(s,0,0,bw,bh);
+console.log('after multiply block', rd(ac,50,25), 'off', rd(ac,10,10));
+const b=createCanvas(bw,bh); const bc=b.getContext('2d');
+bc.drawImage(s,0,0,bw,bh);
+console.log('b', rd(bc,50,25), rd(bc,20,12));
