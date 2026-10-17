@@ -37,3 +37,26 @@ and her friends help carry it home.
 1920×1080 · 24 fps · 1:12 · H.264 + AAC · −13.9 LUFS.
 Everything is drawn and scored in code: a 24-bar music-box lullaby, 45 designed sound cues,
 no samples, no stock, no TTS.
+
+## Wiggle & Giggle — “The Morning Wiggle”
+
+[`wiggle-and-giggle/`](wiggle-and-giggle) is a 75-second toddler song episode in the
+Cocomelon idiom: a pastel playroom at sunrise, a chunky kid named Milo and a sleepy
+puppy named Pip, original sing-along lyrics, karaoke captions and a 120 BPM synth score.
+
+- **Watch:** [`wiggle-and-giggle/renders/final/Wiggle and Giggle - The Morning Wiggle.mp4`](wiggle-and-giggle/renders/final/Wiggle%20and%20Giggle%20-%20The%20Morning%20Wiggle.mp4)
+- **Quick look:** [`wiggle-and-giggle/renders/qa/contact.jpg`](wiggle-and-giggle/renders/qa/contact.jpg)
+- **How it was built:** [`wiggle-and-giggle/README.md`](wiggle-and-giggle/README.md)
+
+1920×1080 · 30 fps · 1:15 · H.264 + AAC · −14.0 LUFS · 24.5 MB.
+Vector frames drawn with Skia, score synthesised with NumPy, vocals TTS + pitch shift.
+
+## NEON GENESIS — The City That Builds Itself
+
+[`neon-genesis/`](neon-genesis) is a 30-second procedural cyberpunk title sequence:
+a city assembles itself out of light, collapses into glitch, and resolves on a title.
+
+- **Watch:** [`neon-genesis/NEON-GENESIS.mp4`](neon-genesis/NEON-GENESIS.mp4)
+- **How it was built:** [`neon-genesis/README.md`](neon-genesis/README.md)
+
+1920×1080 · 30 fps · 0:30 · H.264 + AAC · −15.5 LUFS · 36 MB.

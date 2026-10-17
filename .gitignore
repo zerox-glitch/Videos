@@ -15,3 +15,11 @@ node_modules
 
 neon-genesis/renders/previews/
 neon-genesis/renders/qa/
+
+# Wiggle & Giggle — bulky / regenerable
+wiggle-and-giggle/renders/previews/
+wiggle-and-giggle/assets/*.wav
+wiggle-and-giggle/assets/vo/*_p.wav
+
+# NEON GENESIS — bulky intermediate renders
+neon-genesis/renders/
