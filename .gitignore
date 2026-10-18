@@ -28,3 +28,8 @@ neon-genesis/renders/
 abc-pixel-party/renders/previews/
 abc-pixel-party/assets/*.wav
 abc-pixel-party/assets/vo/*_p.wav
+
+# Stickman's Fine — bulky / regenerable
+stickman-fine/renders/previews/
+stickman-fine/assets/*.wav
+stickman-fine/assets/vo/*_p.wav

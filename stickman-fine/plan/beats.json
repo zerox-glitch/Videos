@@ -1,0 +1,291 @@
+{
+ "meta": {
+  "title": "Stickman's Fine",
+  "tagline": "A stickman comedy about being completely fine",
+  "dur": 72.0,
+  "fps": 30,
+  "bpm": 108,
+  "key": "A minor",
+  "size": [
+   1920,
+   1080
+  ],
+  "loudness_target": -14.0
+ },
+ "sections": [
+  {
+   "name": "intro",
+   "t0": 0.0,
+   "t1": 6.0
+  },
+  {
+   "name": "joke1",
+   "t0": 6.0,
+   "t1": 17.5
+  },
+  {
+   "name": "joke2",
+   "t0": 17.5,
+   "t1": 29.5
+  },
+  {
+   "name": "joke3",
+   "t0": 29.5,
+   "t1": 42.5
+  },
+  {
+   "name": "joke4",
+   "t0": 42.5,
+   "t1": 55.5
+  },
+  {
+   "name": "joke5",
+   "t0": 55.5,
+   "t1": 66.5
+  },
+  {
+   "name": "outro",
+   "t0": 66.5,
+   "t1": 72.0
+  }
+ ],
+ "vo": {
+  "hook": {
+   "t": 2.2,
+   "text": "This is Stickman. He is completely fine."
+  },
+  "p1": {
+   "t": 13.25,
+   "text": "He once hit snooze so hard, he woke up in a museum."
+  },
+  "p2": {
+   "t": 24.95,
+   "text": "His blood type is espresso."
+  },
+  "p3": {
+   "t": 37.3,
+   "text": "This meeting could have been an email. The email could have been a thought."
+  },
+  "p4": {
+   "t": 49.35,
+   "text": "He told his smartwatch he ran a marathon. The watch believed him. Neither of them moved."
+  },
+  "p5": {
+   "t": 61.7,
+   "text": "Turns out, the only one who ever listened was rubber."
+  },
+  "outro": {
+   "t": 67.35,
+   "text": "Stickman insists he is fine. The coffee agrees."
+  },
+  "boss": {
+   "t": 30.1,
+   "text": "Quick five minute meeting!"
+  }
+ },
+ "events": {
+  "hook_wave": 1.0,
+  "hook_stamp": 4.1,
+  "alarm_ring": 6.7,
+  "snooze_slap": 8.1,
+  "days_start": 9.7,
+  "days_end": 12.4,
+  "museum_case": 13.0,
+  "flash1": 14.6,
+  "flash2": 15.4,
+  "flash3": 16.4,
+  "chart_pop": 18.6,
+  "drip_start": 20.3,
+  "ecg_wave": 21.6,
+  "nurse_faint": 24.2,
+  "stamp_espresso": 25.05,
+  "sip": 27.4,
+  "boss_enter": 29.9,
+  "clock_spin": 31.2,
+  "paper_pile": 33.4,
+  "room_fold": 36.55,
+  "envelope_clunk": 37.1,
+  "bubble_shrink": 39.3,
+  "bubble_pop": 40.4,
+  "paper_flutter": 41.2,
+  "watch_goal": 43.6,
+  "shake_start": 44.6,
+  "shake_end": 47.4,
+  "badge": 47.7,
+  "stamp_proud": 49.7,
+  "deadpan_zoom": 51.1,
+  "crickets": 52.4,
+  "split_panel": 53.9,
+  "couch_settle": 56.0,
+  "talk_scribble": 57.2,
+  "duck_reveal": 58.6,
+  "duck_write": 59.8,
+  "notepad_80": 60.9,
+  "duck_squeak": 63.6,
+  "tear": 64.7,
+  "sip_outro": 66.9,
+  "alarm_callback": 70.0,
+  "endcard": 70.35,
+  "iris_close": 71.15
+ },
+ "sfx": [
+  {
+   "id": "alarm_buzz",
+   "t": 6.72
+  },
+  {
+   "id": "slap",
+   "t": 8.12
+  },
+  {
+   "id": "whoosh",
+   "t": 9.75
+  },
+  {
+   "id": "thud",
+   "t": 12.45
+  },
+  {
+   "id": "clunk_glass",
+   "t": 13.02
+  },
+  {
+   "id": "shutter",
+   "t": 14.62
+  },
+  {
+   "id": "shutter",
+   "t": 15.42
+  },
+  {
+   "id": "shutter",
+   "t": 16.42
+  },
+  {
+   "id": "pop_chart",
+   "t": 18.62
+  },
+  {
+   "id": "glug",
+   "t": 20.6
+  },
+  {
+   "id": "ecg_beep",
+   "t": 21.65
+  },
+  {
+   "id": "thud",
+   "t": 24.22
+  },
+  {
+   "id": "stamp",
+   "t": 25.07
+  },
+  {
+   "id": "sip",
+   "t": 27.45
+  },
+  {
+   "id": "whoosh",
+   "t": 29.95
+  },
+  {
+   "id": "rattle",
+   "t": 31.25
+  },
+  {
+   "id": "whoosh",
+   "t": 36.6
+  },
+  {
+   "id": "clunk_glass",
+   "t": 37.12
+  },
+  {
+   "id": "pop",
+   "t": 40.42
+  },
+  {
+   "id": "beepbeep",
+   "t": 43.62
+  },
+  {
+   "id": "shake_rattle",
+   "t": 44.7
+  },
+  {
+   "id": "fanfare",
+   "t": 47.75
+  },
+  {
+   "id": "stamp",
+   "t": 49.72
+  },
+  {
+   "id": "cricket",
+   "t": 52.45
+  },
+  {
+   "id": "page",
+   "t": 53.95
+  },
+  {
+   "id": "plop",
+   "t": 56.05
+  },
+  {
+   "id": "scribble",
+   "t": 57.3
+  },
+  {
+   "id": "quack",
+   "t": 58.65
+  },
+  {
+   "id": "pencil",
+   "t": 59.85
+  },
+  {
+   "id": "quack",
+   "t": 63.62
+  },
+  {
+   "id": "plop",
+   "t": 64.78
+  },
+  {
+   "id": "sip",
+   "t": 66.95
+  },
+  {
+   "id": "alarm_buzz",
+   "t": 70.0
+  },
+  {
+   "id": "stamp",
+   "t": 70.4
+  },
+  {
+   "id": "ding",
+   "t": 71.6
+  }
+ ],
+ "iris": [
+  6.0,
+  17.5,
+  29.5,
+  42.5,
+  55.5,
+  66.5
+ ],
+ "fade": {
+  "in": [
+   0.0,
+   0.45
+  ],
+  "out": [
+   71.55,
+   72.0
+  ]
+ }
+}
