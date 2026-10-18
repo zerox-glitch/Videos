@@ -1,0 +1,48 @@
+{
+  "project": "THE IMPOSSIBLE FILES — EP.001: The Cube With Infinite Space Inside",
+  "output": "final/cube-infinite-space.mp4",
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 3270,
+    "duration_s": 109.02,
+    "codec": "libx264",
+    "profile": "high",
+    "pix_fmt": "yuv420p",
+    "crf": 22,
+    "preset": "slow",
+    "segments": 8,
+    "faststart": true
+  },
+  "audio": {
+    "codec": "aac",
+    "bitrate": "320k",
+    "sample_rate": 48000,
+    "channels": 2,
+    "target_lufs": -14.25,
+    "measured_lufs_delivered": -14.2,
+    "measured_peak_delivered_dbfs": -4.23,
+    "mix": "assets/mix.wav",
+    "score": "assets/score.wav",
+    "vo": "assets/vo/s1..s8.mp3",
+    "sfx": "audio/sfx/*.wav (37 procedural cues)"
+  },
+  "render": {
+    "engine": "Canvas2D software-3D (src/lib/mini3d.js) via @napi-rs/canvas@0.1.80",
+    "deterministic": true,
+    "time_base": "absolute seconds; frames = pure function of t",
+    "preview": "540×960, crf20, preset medium, segments 4",
+    "stills": "node src/render.mjs --stills t1,t2,... --width 540",
+    "fonts": ["ChakraPetch-SemiBold", "ChakraPetch-Bold", "ShareTechMono-Regular"]
+  },
+  "timing": {
+    "source_of_truth": "plan/beats.json",
+    "generator": "scripts/make_beats.py",
+    "sections": 8,
+    "caption_groups": 53,
+    "sfx_cues": 53,
+    "flashes": [47.3, 52.6, 57.4, 61.6],
+    "loop_match_frame": 107.55
+  }
+}

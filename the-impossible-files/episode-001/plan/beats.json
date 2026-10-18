@@ -1,0 +1,715 @@
+{
+ "meta": {
+  "dur": 109.0,
+  "fps": 30,
+  "size": [
+   1080,
+   1920
+  ],
+  "title": "The Cube With Infinite Space Inside",
+  "series": "THE IMPOSSIBLE FILES",
+  "episode": "EP.001",
+  "bpm": 54,
+  "key": "D minor"
+ },
+ "sections": [
+  {
+   "id": "object",
+   "t0": 0.0,
+   "t1": 11.48
+  },
+  {
+   "id": "scan",
+   "t0": 11.48,
+   "t1": 23.61
+  },
+  {
+   "id": "chamber",
+   "t0": 23.61,
+   "t1": 43.33
+  },
+  {
+   "id": "recursion",
+   "t0": 43.33,
+   "t1": 63.2
+  },
+  {
+   "id": "seventh",
+   "t0": 63.2,
+   "t1": 78.36
+  },
+  {
+   "id": "lab",
+   "t0": 78.36,
+   "t1": 90.45
+  },
+  {
+   "id": "paradox",
+   "t0": 90.45,
+   "t1": 103.62
+  },
+  {
+   "id": "ending",
+   "t0": 103.62,
+   "t1": 109.0
+  }
+ ],
+ "vo": [
+  {
+   "id": "s1",
+   "t": 0.45,
+   "dur": 7.75,
+   "win": 7.91
+  },
+  {
+   "id": "s2",
+   "t": 11.48,
+   "dur": 11.15,
+   "win": 11.31
+  },
+  {
+   "id": "s3",
+   "t": 23.61,
+   "dur": 18.6,
+   "win": 18.76
+  },
+  {
+   "id": "s4",
+   "t": 43.33,
+   "dur": 18.02,
+   "win": 18.18
+  },
+  {
+   "id": "s5",
+   "t": 63.2,
+   "dur": 10.95,
+   "win": 11.11
+  },
+  {
+   "id": "s6",
+   "t": 78.36,
+   "dur": 10.85,
+   "win": 11.01
+  },
+  {
+   "id": "s7",
+   "t": 90.45,
+   "dur": 12.2,
+   "win": 12.36
+  },
+  {
+   "id": "s8",
+   "t": 103.62,
+   "dur": 3.75,
+   "win": 3.91
+  }
+ ],
+ "captions": {
+  "s1": [
+   {
+    "text": "It was just",
+    "hi": false,
+    "t": 0.45,
+    "t1": 1.59
+   },
+   {
+    "text": "a black cube.",
+    "hi": false,
+    "t": 1.45,
+    "t1": 2.78
+   },
+   {
+    "text": "Ten centimeters wide.",
+    "hi": true,
+    "t": 2.64,
+    "t1": 4.69
+   },
+   {
+    "text": "No buttons.",
+    "hi": false,
+    "t": 4.55,
+    "t1": 5.69
+   },
+   {
+    "text": "No openings.",
+    "hi": false,
+    "t": 5.55,
+    "t1": 6.78
+   },
+   {
+    "text": "Nothing unusual.",
+    "hi": false,
+    "t": 6.64,
+    "t1": 8.24
+   }
+  ],
+  "s2": [
+   {
+    "text": "Until someone tried",
+    "hi": false,
+    "t": 11.48,
+    "t1": 13.14
+   },
+   {
+    "text": "to measure what was inside.",
+    "hi": false,
+    "t": 13.0,
+    "t1": 15.3
+   },
+   {
+    "text": "The scanner detected",
+    "hi": false,
+    "t": 15.16,
+    "t1": 16.9
+   },
+   {
+    "text": "an empty room...",
+    "hi": false,
+    "t": 16.76,
+    "t1": 18.19
+   },
+   {
+    "text": "Nearly a kilometer long.",
+    "hi": true,
+    "t": 18.05,
+    "t1": 20.11
+   },
+   {
+    "text": "That should have been",
+    "hi": false,
+    "t": 19.97,
+    "t1": 21.79
+   },
+   {
+    "text": "impossible.",
+    "hi": false,
+    "t": 21.65,
+    "t1": 22.67
+   }
+  ],
+  "s3": [
+   {
+    "text": "So they sent",
+    "hi": false,
+    "t": 23.61,
+    "t1": 25.1
+   },
+   {
+    "text": "a miniature camera",
+    "hi": false,
+    "t": 24.96,
+    "t1": 27.13
+   },
+   {
+    "text": "through its surface.",
+    "hi": false,
+    "t": 26.99,
+    "t1": 29.39
+   },
+   {
+    "text": "On the other side",
+    "hi": false,
+    "t": 29.25,
+    "t1": 31.31
+   },
+   {
+    "text": "was a hallway.",
+    "hi": false,
+    "t": 31.17,
+    "t1": 32.89
+   },
+   {
+    "text": "Massive pillars.",
+    "hi": false,
+    "t": 32.75,
+    "t1": 34.69
+   },
+   {
+    "text": "A ceiling lost in darkness.",
+    "hi": false,
+    "t": 34.55,
+    "t1": 37.74
+   },
+   {
+    "text": "And at the far end...",
+    "hi": false,
+    "t": 37.6,
+    "t1": 40.11
+   },
+   {
+    "text": "Another black cube.",
+    "hi": true,
+    "t": 39.97,
+    "t1": 42.25
+   }
+  ],
+  "s4": [
+   {
+    "text": "The camera entered it.",
+    "hi": false,
+    "t": 43.33,
+    "t1": 46.55
+   },
+   {
+    "text": "Another hallway.",
+    "hi": false,
+    "t": 46.41,
+    "t1": 48.79
+   },
+   {
+    "text": "Ten times larger.",
+    "hi": true,
+    "t": 48.65,
+    "t1": 51.17
+   },
+   {
+    "text": "Then another cube.",
+    "hi": false,
+    "t": 51.03,
+    "t1": 53.69
+   },
+   {
+    "text": "And another.",
+    "hi": false,
+    "t": 53.55,
+    "t1": 55.37
+   },
+   {
+    "text": "Each one led",
+    "hi": false,
+    "t": 55.23,
+    "t1": 57.05
+   },
+   {
+    "text": "to a world",
+    "hi": false,
+    "t": 56.91,
+    "t1": 58.45
+   },
+   {
+    "text": "bigger than the last.",
+    "hi": false,
+    "t": 58.31,
+    "t1": 61.39
+   }
+  ],
+  "s5": [
+   {
+    "text": "But after",
+    "hi": false,
+    "t": 63.2,
+    "t1": 64.19
+   },
+   {
+    "text": "the seventh cube...",
+    "hi": true,
+    "t": 64.05,
+    "t1": 65.98
+   },
+   {
+    "text": "Something changed.",
+    "hi": false,
+    "t": 65.84,
+    "t1": 67.68
+   },
+   {
+    "text": "The camera entered",
+    "hi": false,
+    "t": 67.54,
+    "t1": 69.38
+   },
+   {
+    "text": "a room it recognized.",
+    "hi": false,
+    "t": 69.24,
+    "t1": 71.36
+   },
+   {
+    "text": "The same walls.",
+    "hi": false,
+    "t": 71.22,
+    "t1": 72.77
+   },
+   {
+    "text": "The same table.",
+    "hi": false,
+    "t": 72.63,
+    "t1": 74.19
+   }
+  ],
+  "s6": [
+   {
+    "text": "The same laboratory",
+    "hi": true,
+    "t": 78.36,
+    "t1": 80.05
+   },
+   {
+    "text": "where the experiment began.",
+    "hi": false,
+    "t": 79.91,
+    "t1": 82.25
+   },
+   {
+    "text": "And on that table...",
+    "hi": false,
+    "t": 82.11,
+    "t1": 83.88
+   },
+   {
+    "text": "Sat a black cube.",
+    "hi": false,
+    "t": 83.73,
+    "t1": 85.26
+   },
+   {
+    "text": "Then the researchers noticed",
+    "hi": false,
+    "t": 85.12,
+    "t1": 87.54
+   },
+   {
+    "text": "something terrifying.",
+    "hi": false,
+    "t": 87.4,
+    "t1": 89.25
+   }
+  ],
+  "s7": [
+   {
+    "text": "On their monitor...",
+    "hi": false,
+    "t": 90.45,
+    "t1": 92.37
+   },
+   {
+    "text": "They could see themselves",
+    "hi": false,
+    "t": 92.23,
+    "t1": 94.72
+   },
+   {
+    "text": "watching the camera feed.",
+    "hi": false,
+    "t": 94.58,
+    "t1": 97.06
+   },
+   {
+    "text": "But behind them,",
+    "hi": false,
+    "t": 96.92,
+    "t1": 98.56
+   },
+   {
+    "text": "standing in the laboratory...",
+    "hi": false,
+    "t": 98.42,
+    "t1": 101.28
+   },
+   {
+    "text": "Was the camera.",
+    "hi": true,
+    "t": 101.14,
+    "t1": 102.69
+   }
+  ],
+  "s8": [
+   {
+    "text": "It hadn't traveled deeper",
+    "hi": false,
+    "t": 103.62,
+    "t1": 105.12
+   },
+   {
+    "text": "into the cube.",
+    "hi": false,
+    "t": 104.98,
+    "t1": 105.88
+   },
+   {
+    "text": "It had somehow",
+    "hi": false,
+    "t": 105.74,
+    "t1": 106.65
+   },
+   {
+    "text": "come back out.",
+    "hi": true,
+    "t": 106.51,
+    "t1": 107.41
+   }
+  ]
+ },
+ "events": {
+  "anomaly": 1.95,
+  "measure_line": 2.55,
+  "scan_dot": 3.6,
+  "beam_start": 11.6,
+  "wire_on": 12.5,
+  "tunnel_on": 13.4,
+  "count_10": 14.6,
+  "count_100": 15.6,
+  "count_500": 16.5,
+  "count_987": 17.6,
+  "warning": 18.1,
+  "align_face": 20.6,
+  "face_fills": 23.1,
+  "portal_1": 23.61,
+  "cube_far": 33.5,
+  "cube_recognize": 37.6,
+  "cube_center": 41.6,
+  "portal_2": 43.33,
+  "portal_3": 47.3,
+  "portal_4": 52.6,
+  "portal_5": 57.4,
+  "portal_6": 61.6,
+  "blackout": 63.24,
+  "light_rect": 65.2,
+  "room_emerge": 68.5,
+  "table_seen": 72.4,
+  "recognize": 76.2,
+  "monitor_on": 79.2,
+  "feed_lock": 84.0,
+  "probe_reflect": 87.6,
+  "researchers": 91.3,
+  "feed_mirror": 94.0,
+  "probe_behind": 96.4,
+  "ring_clear": 98.2,
+  "they_turn": 100.6,
+  "probe_turn": 101.8,
+  "pullback": 103.66,
+  "collapse": 105.4,
+  "outer_lab": 106.4,
+  "match_frame": 107.55
+ },
+ "flashes": [
+  47.3,
+  52.6,
+  57.4,
+  61.6
+ ],
+ "sfx": [
+  {
+   "t": 0.45,
+   "id": "sub_pulse"
+  },
+  {
+   "t": 1.2,
+   "id": "vent"
+  },
+  {
+   "t": 1.95,
+   "id": "hum_tick"
+  },
+  {
+   "t": 2.55,
+   "id": "meas_blip"
+  },
+  {
+   "t": 3.6,
+   "id": "dot_blink"
+  },
+  {
+   "t": 5.4,
+   "id": "vent"
+  },
+  {
+   "t": 9.0,
+   "id": "hum_tick"
+  },
+  {
+   "t": 11.6,
+   "id": "scan_start"
+  },
+  {
+   "t": 12.4,
+   "id": "scan_pulse"
+  },
+  {
+   "t": 13.4,
+   "id": "scan_pulse"
+  },
+  {
+   "t": 14.6,
+   "id": "scan_pulse"
+  },
+  {
+   "t": 15.6,
+   "id": "scan_pulse"
+  },
+  {
+   "t": 16.5,
+   "id": "scan_pulse"
+  },
+  {
+   "t": 17.6,
+   "id": "impact_mid"
+  },
+  {
+   "t": 18.1,
+   "id": "warning_beep"
+  },
+  {
+   "t": 18.6,
+   "id": "warning_beep"
+  },
+  {
+   "t": 20.6,
+   "id": "riser_short"
+  },
+  {
+   "t": 23.1,
+   "id": "whoosh"
+  },
+  {
+   "t": 23.61,
+   "id": "impact_1"
+  },
+  {
+   "t": 25.0,
+   "id": "hall_amb"
+  },
+  {
+   "t": 28.5,
+   "id": "metal_far"
+  },
+  {
+   "t": 31.5,
+   "id": "hall_amb"
+  },
+  {
+   "t": 33.5,
+   "id": "tone_high"
+  },
+  {
+   "t": 37.6,
+   "id": "tone_high"
+  },
+  {
+   "t": 41.6,
+   "id": "riser_short"
+  },
+  {
+   "t": 43.33,
+   "id": "impact_2"
+  },
+  {
+   "t": 47.3,
+   "id": "impact_3"
+  },
+  {
+   "t": 52.6,
+   "id": "impact_4"
+  },
+  {
+   "t": 57.4,
+   "id": "impact_5"
+  },
+  {
+   "t": 61.6,
+   "id": "impact_6"
+  },
+  {
+   "t": 46.0,
+   "id": "riser_mid"
+  },
+  {
+   "t": 51.0,
+   "id": "riser_mid"
+  },
+  {
+   "t": 56.0,
+   "id": "riser_late"
+  },
+  {
+   "t": 60.5,
+   "id": "riser_late"
+  },
+  {
+   "t": 63.24,
+   "id": "stop_swell"
+  },
+  {
+   "t": 65.2,
+   "id": "room_tone"
+  },
+  {
+   "t": 68.5,
+   "id": "soft_whoosh"
+  },
+  {
+   "t": 72.4,
+   "id": "heart"
+  },
+  {
+   "t": 74.6,
+   "id": "heart"
+  },
+  {
+   "t": 76.2,
+   "id": "heart"
+  },
+  {
+   "t": 79.2,
+   "id": "monitor_buzz"
+  },
+  {
+   "t": 84.0,
+   "id": "feed_lock_beep"
+  },
+  {
+   "t": 87.6,
+   "id": "metal_click"
+  },
+  {
+   "t": 91.3,
+   "id": "heart"
+  },
+  {
+   "t": 94.0,
+   "id": "feed_glitch"
+  },
+  {
+   "t": 96.4,
+   "id": "ring_ping"
+  },
+  {
+   "t": 98.2,
+   "id": "ring_ping"
+  },
+  {
+   "t": 100.6,
+   "id": "breath_rev"
+  },
+  {
+   "t": 101.8,
+   "id": "ring_ping"
+  },
+  {
+   "t": 103.66,
+   "id": "pull_whoosh"
+  },
+  {
+   "t": 105.4,
+   "id": "collapse_rumble"
+  },
+  {
+   "t": 106.4,
+   "id": "impact_final"
+  },
+  {
+   "t": 107.55,
+   "id": "sub_tick"
+  }
+ ],
+ "fade": {
+  "in": [
+   0.0,
+   0.0
+  ],
+  "out": [
+   109.0,
+   109.0
+  ]
+ }
+}

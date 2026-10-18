@@ -37,3 +37,12 @@ stickman-fine/assets/vo/*_p.wav
 # The Internet on Paper — bulky / regenerable
 internet-on-paper/renders/previews/
 internet-on-paper/assets/*.wav
+
+# The Impossible Files EP.001 — bulky / regenerable
+the-impossible-files/episode-001/node_modules/
+the-impossible-files/episode-001/renders/previews/
+the-impossible-files/episode-001/renders/final/_seg/
+the-impossible-files/episode-001/assets/score.wav
+the-impossible-files/episode-001/renders/qa/*.png
+the-impossible-files/episode-001/renders/qa/final/
+the-impossible-files/episode-001/renders/qa/pv/
