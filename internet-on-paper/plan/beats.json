@@ -1,0 +1,467 @@
+{
+ "meta": {
+  "dur": 128.0,
+  "fps": 30,
+  "bpm": 104,
+  "key": "A minor",
+  "title": "The Internet on Paper",
+  "size": [
+   1920,
+   1080
+  ]
+ },
+ "sections": [
+  {
+   "id": "intro",
+   "t0": 0.0,
+   "t1": 8.0
+  },
+  {
+   "id": "packets",
+   "t0": 8.0,
+   "t1": 26.0
+  },
+  {
+   "id": "dns",
+   "t0": 26.0,
+   "t1": 44.0
+  },
+  {
+   "id": "speed",
+   "t0": 44.0,
+   "t1": 62.0
+  },
+  {
+   "id": "datacenter",
+   "t0": 62.0,
+   "t1": 80.0
+  },
+  {
+   "id": "crypto",
+   "t0": 80.0,
+   "t1": 98.0
+  },
+  {
+   "id": "threat",
+   "t0": 98.0,
+   "t1": 116.0
+  },
+  {
+   "id": "outro",
+   "t0": 116.0,
+   "t1": 128.0
+  }
+ ],
+ "events": {
+  "boot_grid": 0.2,
+  "boot_open": 0.6,
+  "title_scramble": 3.9,
+  "title_stamp": 5.4,
+  "subtitle": 5.85,
+  "msg_card": 8.4,
+  "split": 11.0,
+  "header_stamp": 13.2,
+  "route_draw": 15.4,
+  "packet_move": 16.6,
+  "packet_drop": 20.9,
+  "retransmit": 21.6,
+  "assemble": 23.6,
+  "ack": 25.2,
+  "dns_prompt": 26.6,
+  "dns_query": 29.4,
+  "dns_jump": 31.2,
+  "dns_answer": 34.0,
+  "dns_cache": 36.8,
+  "dns_ms": 39.5,
+  "map_draw": 44.6,
+  "cable_draw": 46.2,
+  "light_run": 49.0,
+  "speed_fact": 52.0,
+  "cable_stat": 54.6,
+  "cable_ping": 57.4,
+  "deep_ping": 59.8,
+  "racks_in": 62.5,
+  "fan_spin": 64.4,
+  "query_fan": 67.0,
+  "stitch": 70.6,
+  "cloud_note": 73.0,
+  "power_fact": 75.4,
+  "heat_wave": 78.2,
+  "lock_draw": 80.4,
+  "handshake": 83.0,
+  "key_swap": 86.0,
+  "aes_shred": 88.8,
+  "key_fact": 91.4,
+  "brute_bar": 93.9,
+  "lock_snap": 96.6,
+  "dark_rise": 98.2,
+  "phish_hook": 100.4,
+  "ransom_card": 103.3,
+  "hash_type": 106.0,
+  "salt_reroll": 108.9,
+  "twofa": 111.4,
+  "patch_note": 113.8,
+  "recap_fan": 116.4,
+  "final_gauge": 119.6,
+  "end_stamp": 122.8,
+  "powerdown": 126.6
+ },
+ "glitch_cuts": [
+  8.0,
+  26.0,
+  44.0,
+  62.0,
+  80.0,
+  98.0,
+  116.0
+ ],
+ "glitch_extra": [
+  {
+   "id": "g_packet_drop",
+   "t": 20.9,
+   "dur": 0.16
+  },
+  {
+   "id": "g_title",
+   "t": 4.15,
+   "dur": 0.14
+  },
+  {
+   "id": "g_key_fact",
+   "t": 91.35,
+   "dur": 0.16
+  },
+  {
+   "id": "g_ransom",
+   "t": 103.25,
+   "dur": 0.14
+  },
+  {
+   "id": "g_salt",
+   "t": 108.85,
+   "dur": 0.14
+  },
+  {
+   "id": "g_powerdown",
+   "t": 126.6,
+   "dur": 0.12
+  }
+ ],
+ "flashes": [
+  5.4,
+  23.65,
+  34.05,
+  96.65,
+  122.85
+ ],
+ "vo": [
+  {
+   "id": "hook",
+   "t": 1.4,
+   "win": 7.0
+  },
+  {
+   "id": "p1",
+   "t": 9.0,
+   "win": 17.0
+  },
+  {
+   "id": "p2",
+   "t": 27.0,
+   "win": 14.5
+  },
+  {
+   "id": "p3",
+   "t": 45.2,
+   "win": 13.5
+  },
+  {
+   "id": "p4",
+   "t": 63.0,
+   "win": 15.5
+  },
+  {
+   "id": "p5",
+   "t": 80.05,
+   "win": 19.1
+  },
+  {
+   "id": "p6",
+   "t": 99.2,
+   "win": 16.0
+  },
+  {
+   "id": "outro",
+   "t": 116.15,
+   "win": 11.3
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.25,
+   "id": "boot_blip"
+  },
+  {
+   "t": 1.0,
+   "id": "key_clack"
+  },
+  {
+   "t": 1.6,
+   "id": "type"
+  },
+  {
+   "t": 2.3,
+   "id": "type"
+  },
+  {
+   "t": 3.0,
+   "id": "type"
+  },
+  {
+   "t": 4.2,
+   "id": "glitch"
+  },
+  {
+   "t": 5.45,
+   "id": "stamp"
+  },
+  {
+   "t": 8.02,
+   "id": "glitch"
+  },
+  {
+   "t": 8.55,
+   "id": "slide"
+  },
+  {
+   "t": 11.05,
+   "id": "rip"
+  },
+  {
+   "t": 11.65,
+   "id": "pop"
+  },
+  {
+   "t": 13.25,
+   "id": "header"
+  },
+  {
+   "t": 15.5,
+   "id": "wire"
+  },
+  {
+   "t": 16.7,
+   "id": "zip"
+  },
+  {
+   "t": 20.95,
+   "id": "drop"
+  },
+  {
+   "t": 21.65,
+   "id": "rezip"
+  },
+  {
+   "t": 23.7,
+   "id": "clack"
+  },
+  {
+   "t": 25.3,
+   "id": "beep"
+  },
+  {
+   "t": 26.02,
+   "id": "glitch"
+  },
+  {
+   "t": 26.65,
+   "id": "term"
+  },
+  {
+   "t": 27.35,
+   "id": "type"
+  },
+  {
+   "t": 28.15,
+   "id": "type"
+  },
+  {
+   "t": 29.5,
+   "id": "zap"
+  },
+  {
+   "t": 31.3,
+   "id": "hop"
+  },
+  {
+   "t": 34.1,
+   "id": "slam"
+  },
+  {
+   "t": 36.9,
+   "id": "chip"
+  },
+  {
+   "t": 39.55,
+   "id": "tick"
+  },
+  {
+   "t": 44.02,
+   "id": "glitch"
+  },
+  {
+   "t": 44.65,
+   "id": "map"
+  },
+  {
+   "t": 46.3,
+   "id": "wire"
+  },
+  {
+   "t": 49.1,
+   "id": "whoosh"
+  },
+  {
+   "t": 52.1,
+   "id": "ding"
+  },
+  {
+   "t": 54.7,
+   "id": "bass"
+  },
+  {
+   "t": 57.5,
+   "id": "ping"
+  },
+  {
+   "t": 59.9,
+   "id": "sweep"
+  },
+  {
+   "t": 62.02,
+   "id": "glitch"
+  },
+  {
+   "t": 62.55,
+   "id": "rack"
+  },
+  {
+   "t": 64.45,
+   "id": "fan"
+  },
+  {
+   "t": 67.1,
+   "id": "fanout"
+  },
+  {
+   "t": 70.7,
+   "id": "stitch"
+  },
+  {
+   "t": 73.1,
+   "id": "slap"
+  },
+  {
+   "t": 75.5,
+   "id": "gauge"
+  },
+  {
+   "t": 78.3,
+   "id": "hum"
+  },
+  {
+   "t": 80.02,
+   "id": "glitch"
+  },
+  {
+   "t": 80.5,
+   "id": "click"
+  },
+  {
+   "t": 83.1,
+   "id": "ticket"
+  },
+  {
+   "t": 86.1,
+   "id": "swap"
+  },
+  {
+   "t": 88.9,
+   "id": "shred"
+  },
+  {
+   "t": 91.45,
+   "id": "glitch"
+  },
+  {
+   "t": 93.95,
+   "id": "stall"
+  },
+  {
+   "t": 96.7,
+   "id": "snap"
+  },
+  {
+   "t": 98.02,
+   "id": "glitch"
+  },
+  {
+   "t": 98.3,
+   "id": "drone"
+  },
+  {
+   "t": 100.5,
+   "id": "hook"
+  },
+  {
+   "t": 103.4,
+   "id": "alarm"
+  },
+  {
+   "t": 106.1,
+   "id": "hash"
+  },
+  {
+   "t": 108.95,
+   "id": "hash"
+  },
+  {
+   "t": 111.5,
+   "id": "beep"
+  },
+  {
+   "t": 113.85,
+   "id": "slap"
+  },
+  {
+   "t": 116.02,
+   "id": "glitch"
+  },
+  {
+   "t": 116.5,
+   "id": "whoosh"
+  },
+  {
+   "t": 119.7,
+   "id": "tick"
+  },
+  {
+   "t": 122.9,
+   "id": "stamp"
+  },
+  {
+   "t": 126.7,
+   "id": "powerdown"
+  }
+ ],
+ "fade": {
+  "in": [
+   0.0,
+   0.5
+  ],
+  "out": [
+   127.5,
+   128.0
+  ]
+ }
+}

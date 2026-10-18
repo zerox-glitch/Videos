@@ -33,3 +33,7 @@ abc-pixel-party/assets/vo/*_p.wav
 stickman-fine/renders/previews/
 stickman-fine/assets/*.wav
 stickman-fine/assets/vo/*_p.wav
+
+# The Internet on Paper — bulky / regenerable
+internet-on-paper/renders/previews/
+internet-on-paper/assets/*.wav
