@@ -1,0 +1,68 @@
+{
+  "project": "GOOD PET CLUB fictional pet-shop website Reel",
+  "campaign": "Chronolyte AI",
+  "version": "v1",
+  "created": "2026-10-19",
+  "format": {
+    "platform": "Instagram Reel",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "fps": 30,
+    "duration_seconds": 22,
+    "video": "H.264 High, yuv420p, faststart",
+    "audio": "AAC-LC, 48 kHz stereo; original procedural SFX only"
+  },
+  "brand_note": "GOOD PET CLUB, catalog, demo UI, sample price, and product descriptions are fictional demonstration content, not an operating store or real offer.",
+  "assets": [
+    {
+      "path": "assets/ai/pet-shop/pet-shop-hero.png",
+      "type": "AI-generated editorial photo",
+      "description": "Golden retriever and grey tabby in a bright home; no text or logos.",
+      "dimensions_px": "1376x768"
+    },
+    {
+      "path": "assets/ai/pet-shop/pet-shop-cat.png",
+      "type": "AI-generated editorial photo",
+      "description": "Playful grey-and-white cat with a coral feather toy; no text or logos.",
+      "dimensions_px": "1376x768"
+    },
+    {
+      "path": "assets/ai/pet-shop/pet-shop-products.png",
+      "type": "AI-generated ecommerce flat-lay",
+      "description": "Pastel harness/leash, bowl, brush, rope toy, chew and ball; no text or logos.",
+      "dimensions_px": "1376x768"
+    },
+    {
+      "path": "assets/fonts/space-grotesk/space-grotesk-latin-wght-normal.woff2",
+      "type": "Variable font",
+      "license": "SIL Open Font License 1.1; license copy at assets/fonts/space-grotesk/LICENSE.txt"
+    },
+    {
+      "path": "assets/fonts/dm-sans/dm-sans-latin-opsz-normal.woff2",
+      "type": "Variable font",
+      "license": "SIL Open Font License 1.1; license copy at assets/fonts/dm-sans/LICENSE.txt"
+    },
+    {
+      "path": "assets/sfx/pet-shop-reel-sfx-v1.wav",
+      "type": "Procedural audio, generated locally from the beat plan",
+      "format": "48 kHz, 16-bit PCM, stereo"
+    }
+  ],
+  "source": {
+    "entry": "pet-shop/src/index.html",
+    "scene": "pet-shop/src/pet-scene.js",
+    "beats": "pet-shop/plan/beats.json",
+    "sound_generator": "scripts/generate_sfx.py"
+  },
+  "output": "renders/final/Pet Shop Website Reel v1.mp4",
+  "output_sha256": "68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a",
+  "output_size_bytes": 3935735,
+  "qa": {
+    "decoded_all_frames": true,
+    "frame_count": 660,
+    "video_streams": 1,
+    "visual_review": "Full-length 1-second contact sheets from the final MP4 plus full-resolution route samples."
+  },
+  "provenance": "Original scene and UI rendered deterministically with local Chromium/Canvas/FFmpeg. No external stock photos, copied music, voiceover, user data or paid services."
+}

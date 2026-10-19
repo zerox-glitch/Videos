@@ -2,6 +2,7 @@
 """Create the project's original short UI/transition SFX from plan/beats.json (stdlib only)."""
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import random
@@ -11,7 +12,7 @@ from array import array
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PLAN = ROOT / "plan" / "beats.json"
+DEFAULT_PLAN = ROOT / "plan" / "beats.json"
 DEFAULT_OUTPUT = ROOT / "assets" / "sfx" / "reel-sfx.wav"
 SAMPLE_RATE = 48_000
 
@@ -78,12 +79,15 @@ def add_event(left: array, right: array, event: dict, seed: int) -> None:
 
 
 def main() -> None:
-    if len(sys.argv) > 2:
-        raise SystemExit("Usage: python3 scripts/generate_sfx.py [output.wav]")
-    output = Path(sys.argv[1]) if len(sys.argv) == 2 else DEFAULT_OUTPUT
-    if not output.is_absolute():
-        output = ROOT / output
-    beats = json.loads(PLAN.read_text(encoding="utf-8"))
+    parser = argparse.ArgumentParser(description="Generate original procedural UI SFX from a beat plan.")
+    parser.add_argument("output_positional", nargs="?", type=Path, help="legacy output path")
+    parser.add_argument("--plan", type=Path, default=DEFAULT_PLAN, help="beat JSON file (project-relative by default)")
+    parser.add_argument("--out", type=Path, help="output WAV path; overrides the optional positional path")
+    args = parser.parse_args()
+    plan = args.plan if args.plan.is_absolute() else ROOT / args.plan
+    output_arg = args.out or args.output_positional or DEFAULT_OUTPUT
+    output = output_arg if output_arg.is_absolute() else ROOT / output_arg
+    beats = json.loads(plan.read_text(encoding="utf-8"))
     frames = int(round(float(beats["duration"]) * SAMPLE_RATE))
     left = array("f", [0.0]) * frames
     right = array("f", [0.0]) * frames

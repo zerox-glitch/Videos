@@ -1,0 +1,83 @@
+{
+  "project": "Chronolyte AI Pet Shop Website Reel",
+  "version": "v1",
+  "duration": 22,
+  "fps": 30,
+  "resolution": { "width": 1080, "height": 1920, "aspect": "9:16" },
+  "audio": { "voiceover": false, "music": false, "sound_design": "original procedural UI taps and page-transition swishes" },
+  "beats": [
+    {
+      "id": "hook",
+      "start": 0,
+      "end": 2,
+      "headline": "PET SHOP OWNERS / YOUR NEXT CUSTOMER IS SCROLLING.",
+      "action": "Open directly on a full-screen pet-shop website hero. No device frame: playful hero photo, full-width nav, kinetic hook type, floating paw/star doodles and visible shop button fill the vertical canvas.",
+      "sound_cues": [
+        { "type": "impact", "time": 0.05, "gain": 0.32, "pan": 0 },
+        { "type": "tick", "time": 0.52, "gain": 0.21, "pan": -0.08 },
+        { "type": "swipe", "time": 1.66, "gain": 0.26, "pan": 0.10 }
+      ]
+    },
+    {
+      "id": "home",
+      "start": 2,
+      "end": 5.4,
+      "caption": "GOOD STUFF FOR GOOD PETS.",
+      "action": "Slide to the full-screen home route. Scroll from the oversized headline and shop button into the pets photo, colorful dog/cat categories and a lively product strip.",
+      "sound_cues": [
+        { "type": "swipe", "time": 2.02, "gain": 0.24, "pan": -0.10 },
+        { "type": "tap", "time": 4.42, "gain": 0.24, "pan": 0.08 }
+      ]
+    },
+    {
+      "id": "shop",
+      "start": 5.4,
+      "end": 9,
+      "caption": "TINY JOYS. BIG PERSONALITY.",
+      "action": "Open the shop page full-frame in saturated lilac. Oversized category tabs, illustrated paw/star accents and product cards sweep up; the pet-accessory flat-lay spans the page edge-to-edge.",
+      "sound_cues": [
+        { "type": "swipe", "time": 5.42, "gain": 0.25, "pan": 0.10 },
+        { "type": "tap", "time": 7.08, "gain": 0.23, "pan": -0.08 },
+        { "type": "tick", "time": 8.20, "gain": 0.17, "pan": 0.08 }
+      ]
+    },
+    {
+      "id": "product",
+      "start": 9,
+      "end": 12.7,
+      "caption": "THEIR NEW FAVORITE IS ONE TAP AWAY.",
+      "action": "A full-screen product detail route opens with a large cat-and-toy photo, color choices and a bold Add to Bag button. A cursor selects and taps; the bag count pops once.",
+      "sound_cues": [
+        { "type": "swipe", "time": 9.02, "gain": 0.24, "pan": -0.08 },
+        { "type": "tick", "time": 10.52, "gain": 0.19, "pan": 0.08 },
+        { "type": "tap", "time": 11.36, "gain": 0.25, "pan": -0.03 },
+        { "type": "confirm", "time": 12.08, "gain": 0.18, "pan": 0.04 }
+      ]
+    },
+    {
+      "id": "bag",
+      "start": 12.7,
+      "end": 17.7,
+      "caption": "FROM BROWSE TO BAG — SMOOTHLY.",
+      "action": "Open a full-screen shopping bag route. Show the selected toy, quantity control and a bright checkout CTA; animate the order summary into place without implying a real purchase.",
+      "sound_cues": [
+        { "type": "swipe", "time": 12.72, "gain": 0.24, "pan": 0.08 },
+        { "type": "tap", "time": 14.16, "gain": 0.21, "pan": -0.08 },
+        { "type": "tick", "time": 15.14, "gain": 0.17, "pan": 0.08 },
+        { "type": "confirm", "time": 16.72, "gain": 0.20, "pan": 0 }
+      ]
+    },
+    {
+      "id": "cta",
+      "start": 17.7,
+      "end": 22,
+      "headline": "WANT A WEBSITE THIS GOOD?",
+      "action": "Resolve into a full-screen Chronolyte AI end card, keeping www.chronolyteai.site and +1 (812) 690-6121 large, centered and together for more than three seconds.",
+      "sound_cues": [
+        { "type": "impact", "time": 17.72, "gain": 0.22, "pan": 0 },
+        { "type": "tick", "time": 18.82, "gain": 0.15, "pan": -0.08 },
+        { "type": "tick", "time": 19.66, "gain": 0.15, "pan": 0.08 }
+      ]
+    }
+  ]
+}

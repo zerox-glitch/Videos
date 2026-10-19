@@ -51,3 +51,16 @@ The renderer supports `--from`, `--to`, `--fps`, `--scale`, `--out`, `--name`, o
 ## Sound
 
 No voiceover or copyrighted/trending track is embedded. The render includes original procedural UI taps and page swipes; add a currently licensed Instagram track in-app if desired.
+
+## Additional campaign — pet-shop website Reel
+
+A separate fictional GOOD PET CLUB storefront concept follows the same 22-second, 1080×1920, 30 fps Instagram Reel format. The site is full-screen and edge-to-edge (no phone mockup), with a hook, Home → Shop → Product → Bag tour and Chronolyte AI end card. The sample bag is explicitly a demo and does not imply a real order.
+
+- Project guide: `pet-shop/README.md`; timing/script/storyboard/design in `pet-shop/plan/`.
+- Canvas animation: `pet-shop/src/pet-scene.js`; entry: `pet-shop/src/index.html`.
+- Generated pet/shop photos: `assets/ai/pet-shop/`.
+- Project-specific audio and provenance: `assets/sfx/pet-shop-reel-sfx-v1.wav`, `pet-shop/manifest.json`.
+- Render commands: `npm run audio:pet`, `npm run preview:pet`, `npm run render:pet`.
+- Final export: `renders/final/Pet Shop Website Reel v1.mp4`.
+
+The HVAC source and v1/v2 exports remain intact.

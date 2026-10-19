@@ -5,7 +5,10 @@
   "scripts": {
     "preview": "node src/render.js --from 0 --to 22 --fps 6 --scale 0.35 --out cache/v2-preview --name \"HVAC Full-Screen Reel Preview v2\" --audio assets/sfx/reel-sfx-v2.wav",
     "render": "node src/render.js --from 0 --to 22 --fps 30 --scale 1 --out renders/final --name \"HVAC Website Reel v2\" --audio assets/sfx/reel-sfx-v2.wav",
-    "audio": "python3 scripts/generate_sfx.py assets/sfx/reel-sfx-v2.wav"
+    "audio": "python3 scripts/generate_sfx.py assets/sfx/reel-sfx-v2.wav",
+    "preview:pet": "node src/render.js --entry pet-shop/src/index.html --beats pet-shop/plan/beats.json --from 0 --to 22 --fps 6 --scale 0.35 --out cache/pet-shop-preview-v1 --name \"Pet Shop Website Reel Preview v1\" --audio assets/sfx/pet-shop-reel-sfx-v1.wav",
+    "render:pet": "node src/render.js --entry pet-shop/src/index.html --beats pet-shop/plan/beats.json --from 0 --to 22 --fps 30 --scale 1 --out renders/final --name \"Pet Shop Website Reel v1\" --audio assets/sfx/pet-shop-reel-sfx-v1.wav",
+    "audio:pet": "python3 scripts/generate_sfx.py --plan pet-shop/plan/beats.json --out assets/sfx/pet-shop-reel-sfx-v1.wav"
   },
   "devDependencies": {
     "@ffmpeg-installer/linux-x64": "4.1.0",

@@ -11,8 +11,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium as playwrightChromium } from 'playwright-core';
 import sparticuzChromium from '@sparticuz/chromium';
-import { DURATION, W, H, FPS } from './data.js';
-
 const root = process.cwd();
 const src = path.dirname(fileURLToPath(import.meta.url));
 const argsIn = process.argv.slice(2);
@@ -20,11 +18,22 @@ const opt = (key, fallback) => {
   const i = argsIn.indexOf(`--${key}`);
   return i < 0 ? fallback : argsIn[i + 1];
 };
+const beatsArgument = String(opt('beats', 'plan/beats.json'));
+const beatsPath = path.resolve(root, beatsArgument);
+if (!beatsPath.startsWith(`${root}${path.sep}`)) throw new Error('The beats file must be inside this project.');
+const beatSheet = JSON.parse(await readFile(beatsPath, 'utf8'));
+const W = Number(beatSheet.resolution?.width ?? 1080);
+const H = Number(beatSheet.resolution?.height ?? 1920);
+const DURATION = Number(beatSheet.duration);
+const FPS = Number(beatSheet.fps ?? 30);
+const entryArgument = String(opt('entry', 'src/index.html')).replace(/\\/g, '/');
+if (entryArgument.startsWith('/') || entryArgument.split('/').includes('..')) throw new Error('The render entry must be a project-relative path.');
+const entryUrl = `/${entryArgument}`;
 const from = Number(opt('from', 0));
 const to = Number(opt('to', DURATION));
 const fps = Number(opt('fps', FPS));
 const scale = Number(opt('scale', 1));
-if (![from, to, fps, scale].every(Number.isFinite) || from < 0 || to <= from || fps <= 0 || scale <= 0 || scale > 1 || to > DURATION + 1e-6) {
+if (![from, to, fps, scale, W, H, DURATION].every(Number.isFinite) || from < 0 || to <= from || fps <= 0 || scale <= 0 || scale > 1 || to > DURATION + 1e-6) {
   throw new Error(`Invalid render range/settings. Duration is ${DURATION}s.`);
 }
 const count = Math.ceil((to - from) * fps - 1e-8);
@@ -85,7 +94,7 @@ const mime = {
   '.png': 'image/png',
   '.woff2': 'font/woff2',
 };
-const allowedPrefixes = ['/src/', '/assets/', '/plan/'];
+const allowedPrefixes = ['/src/', '/assets/', '/plan/', '/pet-shop/'];
 const server = http.createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://127.0.0.1').pathname);
@@ -124,7 +133,7 @@ try {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
-  await page.goto(`http://127.0.0.1:${server.address().port}/src/index.html?scale=${scale}`, { waitUntil: 'load' });
+  await page.goto(`http://127.0.0.1:${server.address().port}${entryUrl}?scale=${scale}`, { waitUntil: 'load' });
   await page.waitForFunction(() => window.__ready === true, { timeout: 30000 });
   if (errors.length) throw new Error(errors.join('\n'));
 

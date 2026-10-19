@@ -22,3 +22,11 @@
 - 2026-10-19 15:33 · Rendered `renders/final/HVAC Website Reel v2.mp4` at 1080×1920, 30 fps, H.264 High/yuv420p + AAC-LC 48 kHz stereo. Result: 660 frames, 22.00 s, 3.86 MB; FFmpeg full decode completed without errors.
 - 2026-10-19 15:34 · Re-rendered full-resolution spot frames from the final master and reviewed Hook, Home, Services, How It Works, Booking and CTA. Text and page edges are clear, no device frame or crop remains, URL and supplied phone are prominent together. Updated the v2 design board, manifest and progress notes.
 - 2026-10-19 15:40 · Pushed v2 and the revised renderer/source project to `origin/arena/a9ebe650-videos` (commit `ec32e8c`); v1 remains preserved. No pull request opened.
+
+## Pet Shop Website Reel v1 — 2026-10-19
+- Began the separate fictional GOOD PET CLUB concept using the established full-screen, edge-to-edge treatment; retained the Chronolyte AI end card and all HVAC exports.
+- Generated three text-free pet/shop images; created a pet-specific Canvas 2D scene, 22-second beat plan, local SFX, storyboard, design guide, script, manifest and re-render commands.
+- Added tested `--entry`/`--beats` renderer options and argparse plan/output options for the procedural SFX generator. Built the visible Home → Shop → Product → Bag route tour, scrolls, cursor taps and sample-only checkout UI.
+- Rendered/reviewed a 6 fps preview and full-resolution stills; tuned Home/Shop scroll distance to keep type readable under the sticky nav.
+- Rendered `renders/final/Pet Shop Website Reel v1.mp4` (660 frames, 1080×1920, 30 fps, 22.00 s, H.264 High/yuv420p + AAC-LC 48 kHz stereo, 3,935,735 bytes). Full decode and final visual review passed; encoded audio peak −7.2 dBFS, mean −29.9 dBFS.
+- SHA-256: `68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a`. Next: deliver on `arena/a9ebe650-videos`.
