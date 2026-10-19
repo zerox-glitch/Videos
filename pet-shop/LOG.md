@@ -16,4 +16,4 @@
 - Rendered `renders/final/Pet Shop Website Reel v1.mp4`: 660 frames, 1080×1920, 30 fps, 22.00 s, H.264 High/yuv420p + AAC-LC 48 kHz stereo; final size 3,935,735 bytes.
 - Full FFmpeg decode completed without errors. Audio on the encoded MP4: peak −7.2 dBFS, mean −29.9 dBFS. Reviewed the final encoded master across four contact sheets and sampled full-resolution hook, home, shop, product, bag and CTA frames.
 - Confirmed the final end card keeps `www.chronolyteai.site` and `+1 (812) 690-6121` together, large and still for the closing hold. Saved SHA-256 `68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a`.
-- Updated documentation and project-specific provenance. Next: push this reel to the existing Arena branch and present the final MP4.
+- Updated documentation and project-specific provenance. Pushed the reel and source to `origin/arena/a9ebe650-videos` as commit `ee2fc90`; no pull request opened.

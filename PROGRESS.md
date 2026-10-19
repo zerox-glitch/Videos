@@ -11,7 +11,7 @@ Phase: **DONE — final master rendered, decoded and visually reviewed.**
 - Final master fully decoded (660 frames), passed route/contact visual review; website and phone number are together and legible on the ending.
 - SHA-256: `68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a`.
 - Project notes: `pet-shop/PROGRESS.md`, `pet-shop/LOG.md`, `pet-shop/TASTE.md`, `pet-shop/README.md`.
-- Next: push to the session branch `arena/a9ebe650-videos` and present the MP4. Keep HVAC exports intact.
+- Pushed as commit `ee2fc90` to `origin/arena/a9ebe650-videos`; no pull request opened. Present the MP4. Keep HVAC exports intact.
 
 ## Previous delivery — HVAC Website Reel v2
 Phase: DONE — v2 ready for review. v1 is preserved separately.

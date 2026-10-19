@@ -29,4 +29,4 @@
 - Added tested `--entry`/`--beats` renderer options and argparse plan/output options for the procedural SFX generator. Built the visible Home → Shop → Product → Bag route tour, scrolls, cursor taps and sample-only checkout UI.
 - Rendered/reviewed a 6 fps preview and full-resolution stills; tuned Home/Shop scroll distance to keep type readable under the sticky nav.
 - Rendered `renders/final/Pet Shop Website Reel v1.mp4` (660 frames, 1080×1920, 30 fps, 22.00 s, H.264 High/yuv420p + AAC-LC 48 kHz stereo, 3,935,735 bytes). Full decode and final visual review passed; encoded audio peak −7.2 dBFS, mean −29.9 dBFS.
-- SHA-256: `68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a`. Next: deliver on `arena/a9ebe650-videos`.
+- SHA-256: `68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a`. Pushed the reel and source to `origin/arena/a9ebe650-videos` as commit `ee2fc90`; no pull request opened.

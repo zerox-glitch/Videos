@@ -25,7 +25,7 @@ Status: **v1 complete, rendered, decoded and visually reviewed**.
 - Final MP4: `renders/final/Pet Shop Website Reel v1.mp4`.
 - Hash: `68a8813be27007e1b88108f49daf50eca23f8dda1e866e0f81d74d2bc569fe1a`.
 - Preserve both completed HVAC exports; pet-shop work is separate.
-- Push this version only to `origin/arena/a9ebe650-videos`, then present the MP4.
+- Pushed this version to `origin/arena/a9ebe650-videos` as commit `ee2fc90`; no pull request opened.
 
 ## If revising
 - Keep v1 unchanged; make requested revisions as v2.
