@@ -1,0 +1,16 @@
+# Production log — Chronolyte AI HVAC Website Reel
+
+- 2026-10-19 14:30 · Read Motion Video Director entrypoint, setup, planning, visual design, font, reference/delivery and local sound guides; ran read-only preflight. Result: Node/Python/ImageMagick available; no FFmpeg, Chromium or Playwright.
+- 2026-10-19 14:32 · Asked before dependency installation; user approved project-local rendering tools. Added Playwright Core, @sparticuz/chromium and FFmpeg plus local font specimens. No system packages or paid services installed.
+- 2026-10-19 14:34 · Locked 22 s / 1080×1920 / 30 fps plan, storyboard, no-VO/no-music script, design board, taste memory and provenance manifest.
+- 2026-10-19 14:36 · Generated HVAC editorial hero and finished smart-thermostat stills; added local Space Grotesk, DM Sans, Manrope and Outfit font files with OFL license copies.
+- 2026-10-19 14:39 · Implemented deterministic Canvas/WebGL scenes for the hook, mobile home/services/schedule routes, vertical scroll, cursor actions, page fan and CTA. Fixed Chromium launch by unpacking the Chromium package's bundled NSS/NSPR libraries into temporary storage (no OS install).
+- 2026-10-19 14:43 · Created a 48 kHz stereo procedural SFX mix from the absolute-time cue plan; 16 short original cues, no music.
+- 2026-10-19 14:45 · Rendered low-resolution full-length preview v1 and reviewed contact sheets. Inspection revealed page content aligned to the phone shell rather than the scroll viewport; corrected body-origin translation and replaced the unfinished thermostat image with a completed installation photo.
+- 2026-10-19 14:48 · Rendered full-length preview v2 (8 fps, 35% size, with SFX); reviewed all sections and full-resolution spot frames. Confirmed readable copy, routes, CTA and generated image crops.
+- 2026-10-19 14:50 · Tightened the page-fan and final-card entrances after checking the 14–22 s range; rendered/reviewed Flow and CTA Preview v1. Design-board screenshot confirmed all four font specimens load locally.
+- 2026-10-19 14:52 · Next: render the 1080×1920 / 30 fps H.264/AAC master, inspect the whole-length contact sheet, verify metadata and decode, then package the final frame references.
+- 2026-10-19 14:59 · Rendered `renders/final/HVAC Website Reel v1.mp4` at full size: 660 frames, 30 fps, 1080×1920, H.264 High/yuv420p, AAC-LC 48 kHz stereo, 22.00 s; final file 7.2 MB. Render wall time ≈ 440.6 s.
+- 2026-10-19 15:00 · Decoded the complete MP4 with FFmpeg and reviewed four final-resolution contact sheets plus a full-resolution end-card frame. Result: 660 frames decoded without errors; exact website/phone are sharp and central in the ending; no clipping or broken text observed. Audio measurement on encoded file: peak −7.2 dBFS, mean −30.3 dBFS (sparse SFX-only mix; no voice/music).
+- 2026-10-19 15:01 · Saved code-rendered key frames and design-board screenshot in `plan/frames/`; updated final deliverable notes. v1 is ready for the user to review.
+- 2026-10-19 15:10 · User requested GitHub delivery. Rechecked the MP4 stream metadata with ffprobe (22.00 s, 1080×1920, 30 fps, H.264/yuv420p, AAC-LC/48 kHz) and verified the final contact card keeps the supplied URL and phone together in the safe area. Excluded regenerable cache, previews and local dependencies; retained the final MP4 and source project.

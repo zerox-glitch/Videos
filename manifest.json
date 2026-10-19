@@ -1,0 +1,69 @@
+{
+  "project": "Chronolyte AI HVAC Website Reel",
+  "created": "2026-10-19",
+  "assets": [
+    {
+      "path": "assets/ai/hvac-technician-hero.jpg",
+      "type": "generated still image",
+      "source_url": null,
+      "author": "AI-generated for this project with Arena's image-generation tool",
+      "license": "Generated project asset; not sourced from third-party stock",
+      "license_file": null,
+      "used_in": ["home-page hero", "homepage card stack"]
+    },
+    {
+      "path": "assets/ai/hvac-thermostat-finished.jpg",
+      "type": "generated still image",
+      "source_url": null,
+      "author": "AI-generated for this project with Arena's image-generation tool",
+      "license": "Generated project asset; not sourced from third-party stock",
+      "license_file": null,
+      "used_in": ["services-page feature", "services card stack"]
+    },
+    {
+      "path": "assets/fonts/space-grotesk/space-grotesk-latin-wght-normal.woff2",
+      "type": "variable font",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/space-grotesk",
+      "author": "The Space Grotesk Project Authors; package distributed by Fontsource",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "assets/fonts/space-grotesk/LICENSE.txt",
+      "used_in": ["headline/display typography", "design comparison board"]
+    },
+    {
+      "path": "assets/fonts/dm-sans/dm-sans-latin-opsz-normal.woff2",
+      "type": "variable font",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/dm-sans",
+      "author": "The DM Sans Project Authors; package distributed by Fontsource",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "assets/fonts/dm-sans/LICENSE.txt",
+      "used_in": ["body/UI typography", "design comparison board"]
+    },
+    {
+      "path": "assets/fonts/manrope/manrope-latin-wght-normal.woff2",
+      "type": "variable font",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/manrope",
+      "author": "The Manrope Project Authors; package distributed by Fontsource",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "assets/fonts/manrope/LICENSE.txt",
+      "used_in": ["design comparison board only"]
+    },
+    {
+      "path": "assets/fonts/outfit/outfit-latin-wght-normal.woff2",
+      "type": "variable font",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/outfit",
+      "author": "The Outfit Project Authors; package distributed by Fontsource",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "assets/fonts/outfit/LICENSE.txt",
+      "used_in": ["design comparison board only"]
+    },
+    {
+      "path": "assets/sfx/reel-sfx.wav",
+      "type": "original procedural sound-design mix",
+      "source_url": null,
+      "author": "Generated locally for this project by scripts/generate_sfx.py",
+      "license": "Original procedural synthesis; no third-party samples",
+      "license_file": null,
+      "used_in": ["final video AAC track"]
+    }
+  ]
+}

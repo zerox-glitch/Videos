@@ -1,0 +1,54 @@
+{
+  "name": "chronolyte-hvac-reel",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "node src/render.js --from 0 --to 8 --fps 8 --scale 0.35 --out renders/previews --name \"HVAC Reel Preview v1\"",
+    "render": "node src/render.js",
+    "audio": "python3 src/make_audio.py"
+  },
+  "devDependencies": {
+    "@ffmpeg-installer/linux-x64": "4.1.0",
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "@fontsource-variable/outfit": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "5.3.0",
+    "@sparticuz/chromium": "153.0.0",
+    "playwright-core": "1.64.1"
+  },
+  "version": "1.0.0",
+  "description": "A 22-second Instagram Reel promo for Chronolyte AI's web-design services, created as a high-energy mobile HVAC website tour. The fictional demo brand is **Northline HVAC**; the real CTA at the ending is `www.chronolyteai.site` and `+1 (812) 690-6121`.",
+  "main": "index.js",
+  "dependencies": {
+    "@ffprobe-installer/linux-x64": "5.2.0",
+    "b4a": "^1.9.0",
+    "bare-events": "^2.9.2",
+    "bare-fs": "^4.8.4",
+    "bare-path": "^3.1.2",
+    "bare-stream": "^2.13.4",
+    "bare-url": "^2.5.5",
+    "end-of-stream": "^1.4.5",
+    "events-universal": "^1.0.1",
+    "fast-fifo": "^1.3.2",
+    "follow-redirects": "^1.16.1",
+    "once": "^1.4.0",
+    "pump": "^3.0.4",
+    "streamx": "^2.28.1",
+    "tar-fs": "^3.1.3",
+    "tar-stream": "^3.2.2",
+    "teex": "^1.0.1",
+    "text-decoder": "^1.2.7",
+    "wrappy": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerox-glitch/Videos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zerox-glitch/Videos/issues"
+  },
+  "homepage": "https://github.com/zerox-glitch/Videos#readme"
+}
