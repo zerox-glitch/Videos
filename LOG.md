@@ -21,3 +21,4 @@
 - 2026-10-19 15:26 · Added lower-page sections to prevent blank vertical dead zones; fixed service-card number/arrow spacing; refreshed route-preview sheet. Ready for the final v2 render.
 - 2026-10-19 15:33 · Rendered `renders/final/HVAC Website Reel v2.mp4` at 1080×1920, 30 fps, H.264 High/yuv420p + AAC-LC 48 kHz stereo. Result: 660 frames, 22.00 s, 3.86 MB; FFmpeg full decode completed without errors.
 - 2026-10-19 15:34 · Re-rendered full-resolution spot frames from the final master and reviewed Hook, Home, Services, How It Works, Booking and CTA. Text and page edges are clear, no device frame or crop remains, URL and supplied phone are prominent together. Updated the v2 design board, manifest and progress notes.
+- 2026-10-19 15:40 · Pushed v2 and the revised renderer/source project to `origin/arena/a9ebe650-videos` (commit `ec32e8c`); v1 remains preserved. No pull request opened.
