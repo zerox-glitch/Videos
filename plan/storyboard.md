@@ -1,18 +1,19 @@
-# Storyboard — Chronolyte AI HVAC Website Reel v1
+# Storyboard — Chronolyte AI HVAC Website Reel v2
 
-**Runtime:** 22 s · **Frame:** Instagram Reel, 9:16, 1080 × 1920, 30 fps · **Treatment:** kinetic UI showcase / code-drawn + generated still photography · **Narration/music:** none; original procedural sound effects only. Timing lives only in `plan/beats.json`.
+**Runtime:** 22 s · **Format:** Instagram Reel, 9:16, 1080 × 1920, 30 fps · **Approach:** full-screen website UI + generated HVAC photography · **Audio:** original procedural UI SFX only. Timing and cue data live in `plan/beats.json`.
 
-| Time | Audio | Visual / motion | On-screen copy |
+| Time | Audio | Full-frame website visual / motion | On-screen copy |
 |---|---|---|---|
-| 0.00–2.40 | No VO or music. Soft impact, a dry tick, short transition sweep. | Pattern interrupt: light-field background blooms, oversized words arrive in three quick beats. A cursor snaps toward a booking cue as the edge of a site preview rises. | `HVAC OWNERS` → `YOUR NEXT CUSTOMER` → `IS SCROLLING.` |
-| 2.40–6.20 | Short page-swipe, one understated button click. | A premium mobile device resolves in the center. Fictional Northline HVAC homepage: readable nav, hero photo, short value proposition, clear booking CTA. Vertical scroll reveals the next section; a slim scrollbar makes the motion legible. | `FIRST IMPRESSIONS.` / `ZERO GUESSWORK.` |
-| 6.20–10.30 | Short page-swipe, one card-tap. | Visible tap on Services, horizontal route transition to `/services`, then a controlled scroll through large AC, heating, installation and indoor-air cards. A second, warmer photo supplies a human detail. | `EVERY SERVICE.` / `EASY TO FIND.` |
-| 10.30–14.60 | Page-swipe, selection tick, small confirmation pop. | Visible tap on Book; `/schedule` loads. Choose AC repair, select a date, press the request button, and show a clearly fictional `Request received` success state. | `TAP.` / `CHOOSE.` / `REQUEST A VISIT.` |
-| 14.60–18.50 | Soft page-fan and gentle settle. | Three tilted page layers (home / services / booking) fan out, hover with parallax and align into a unified site. No fake metrics or testimonials. | `ONE CLEAR NEXT STEP.` / `ON EVERY PAGE.` |
-| 18.50–22.00 | A restrained end-card swell and two small UI ticks; no copyrighted music. | Calm dark end card. Chronolyte AI wordmark and the two supplied contact points stay together, central and readable for the final 3.5 s. | `NEED A WEBSITE LIKE THIS?` · `CHRONOLYTE AI` · `www.chronolyteai.site` · `+1 (812) 690-6121` |
+| 0.00–2.20 | Impact, tick, short swipe. | Open on the Northline HVAC site itself: white full-width nav, warm technician hero photo filling the frame beneath it, cobalt/coral/yellow palette, large hook and a visible booking button. No phone/device frame, side margins or dark backdrop around the site. | `HVAC OWNERS` → `YOUR NEXT CUSTOMER` → `IS SCROLLING.` |
+| 2.20–5.80 | Page swipe, one CTA tap. | Home route takes the entire frame edge-to-edge. Scroll from the oversized headline and button to a full-bleed HVAC photo, then reveal three colorful service cards. Sticky site header stays in place. | `Comfort, built around you.` / `Heating, cooling + indoor air, made simple.` |
+| 5.80–9.60 | Route swipe, card tap, short scroll. | Services route slides in full-frame on saturated cobalt. Four large, high-contrast cards fill the screen; the thermostat photo is a wide full-bleed panel below. No nested device mockup. | `Heating. Cooling. Fresh air.` / `A/C repair` / `Heating` / `New systems` / `Indoor air` |
+| 9.60–13.20 | Route swipe and one light tick. | How It Works route fills the frame. Wide thermostat photo hero; large three-step cards rise into view on a pale-sky page. | `A clearer path to comfort.` / `Tell us` / `See options` / `Choose a time` |
+| 13.20–18.20 | Route swipe; selection taps; confirmation tone. | Booking route is a full-page website view. Large service row, three date tiles, time slots and a prominent request button. Cursor selects the options and taps; a clearly sample-labeled confirmation appears. | `Let's get it comfortable.` / `Choose a day` / `Time window` / `Request a visit` |
+| 18.20–22.00 | Low impact and two soft UI ticks. | Resolve to a full-screen Chronolyte AI end card in deep cobalt/navy with crisp aqua/coral accents. Hold both contact details together, large and centered, for over three seconds. | `Need a website like this?` · `CHRONOLYTE AI` · `www.chronolyteai.site` · `+1 (812) 690-6121` |
 
-## Copy / claim check
-- Northline HVAC is a fictional demonstration brand; its pages show sample services and a sample booking request only.
-- No performance percentages, review scores, guarantees, customer testimonials or service-area claims are invented.
-- The phone number is formatted for readability but preserves the supplied digits: `+18126906121`.
-- Captions are short, large, high-contrast and inside the Reel safe area. Website UI copy uses short lines and generous padding.
+## Revision notes / accuracy
+- V1 used a centered phone mockup; the user said that made the website feel too small. V2 removes it completely: every HVAC route is a native full-screen 9:16 page, edge-to-edge.
+- New site palette: frost white `#F4F7FD`, cobalt `#2C63F4`, deep navy `#10264A`, coral `#FF754A`, sunshine `#FFD05A`, and sky/mint surfaces.
+- Northline is a fictional demo brand. No invented ratings, testimonials, guarantees, customer results, availability or service-area claims.
+- All website words and buttons are independently drawn in the selected local fonts; photos contain no text/logos.
+- The final phone string is formatted for readability but retains the user's exact digits.

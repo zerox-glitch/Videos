@@ -9,7 +9,10 @@
       "author": "AI-generated for this project with Arena's image-generation tool",
       "license": "Generated project asset; not sourced from third-party stock",
       "license_file": null,
-      "used_in": ["home-page hero", "homepage card stack"]
+      "used_in": [
+        "full-screen opening hook",
+        "edge-to-edge Home page hero"
+      ]
     },
     {
       "path": "assets/ai/hvac-thermostat-finished.jpg",
@@ -18,7 +21,10 @@
       "author": "AI-generated for this project with Arena's image-generation tool",
       "license": "Generated project asset; not sourced from third-party stock",
       "license_file": null,
-      "used_in": ["services-page feature", "services card stack"]
+      "used_in": [
+        "full-bleed Services page photo",
+        "How It Works page hero"
+      ]
     },
     {
       "path": "assets/fonts/space-grotesk/space-grotesk-latin-wght-normal.woff2",
@@ -27,7 +33,10 @@
       "author": "The Space Grotesk Project Authors; package distributed by Fontsource",
       "license": "SIL Open Font License 1.1",
       "license_file": "assets/fonts/space-grotesk/LICENSE.txt",
-      "used_in": ["headline/display typography", "design comparison board"]
+      "used_in": [
+        "headline/display typography",
+        "design comparison board"
+      ]
     },
     {
       "path": "assets/fonts/dm-sans/dm-sans-latin-opsz-normal.woff2",
@@ -36,7 +45,10 @@
       "author": "The DM Sans Project Authors; package distributed by Fontsource",
       "license": "SIL Open Font License 1.1",
       "license_file": "assets/fonts/dm-sans/LICENSE.txt",
-      "used_in": ["body/UI typography", "design comparison board"]
+      "used_in": [
+        "body/UI typography",
+        "design comparison board"
+      ]
     },
     {
       "path": "assets/fonts/manrope/manrope-latin-wght-normal.woff2",
@@ -45,7 +57,9 @@
       "author": "The Manrope Project Authors; package distributed by Fontsource",
       "license": "SIL Open Font License 1.1",
       "license_file": "assets/fonts/manrope/LICENSE.txt",
-      "used_in": ["design comparison board only"]
+      "used_in": [
+        "design comparison board only"
+      ]
     },
     {
       "path": "assets/fonts/outfit/outfit-latin-wght-normal.woff2",
@@ -54,7 +68,9 @@
       "author": "The Outfit Project Authors; package distributed by Fontsource",
       "license": "SIL Open Font License 1.1",
       "license_file": "assets/fonts/outfit/LICENSE.txt",
-      "used_in": ["design comparison board only"]
+      "used_in": [
+        "design comparison board only"
+      ]
     },
     {
       "path": "assets/sfx/reel-sfx.wav",
@@ -63,7 +79,31 @@
       "author": "Generated locally for this project by scripts/generate_sfx.py",
       "license": "Original procedural synthesis; no third-party samples",
       "license_file": null,
-      "used_in": ["final video AAC track"]
+      "used_in": [
+        "final video AAC track"
+      ]
+    },
+    {
+      "path": "assets/sfx/reel-sfx-v2.wav",
+      "type": "original procedural sound-design mix",
+      "source_url": null,
+      "author": "Generated locally for this project by scripts/generate_sfx.py from plan/beats.json",
+      "license": "Original procedural synthesis; no third-party samples",
+      "license_file": null,
+      "used_in": [
+        "v2 final video AAC track"
+      ]
+    },
+    {
+      "path": "renders/final/HVAC Website Reel v2.mp4",
+      "type": "final H.264/AAC Instagram Reel",
+      "source_url": null,
+      "author": "Motion graphics video rendered for Chronolyte AI from the user's brief",
+      "license": "Original project output using generated project imagery and locally licensed OFL fonts",
+      "license_file": null,
+      "used_in": [
+        "user deliverable"
+      ]
     }
   ]
 }

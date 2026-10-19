@@ -1,65 +1,66 @@
 # TASTE — Chronolyte AI HVAC Website Reel
 
-Updated: 2026-10-19 · current version: v1 → `renders/final/HVAC Website Reel v1.mp4`
-Status: creator-directed v1 built from the user's brief; not yet user-reviewed.
-Visual companion: `plan/design.html` · one timing source: `plan/beats.json`
+Updated: 2026-10-19 · current version: v2 → `renders/final/HVAC Website Reel v2.mp4`
+Status: v2 is the revision requested after v1 review; preserve v1 at `renders/final/HVAC Website Reel v1.mp4`.
+Visual companion: `plan/design.html` · active timing source: `plan/beats.json`
 
 ## 1. Brief, concept & story
-- **One-line concept:** A scroll-stopping mini tour of a polished fictional HVAC website: home → services → booking → Chronolyte AI CTA.
-- **Video type / platform / format:** Instagram Reel · vertical 9:16 · 1080×1920 · 30 fps · 22 s.
-- **Audience & goal / CTA:** HVAC owners and contractors; show what a high-quality service-business site could look like and invite them to contact Chronolyte AI at `www.chronolyteai.site` or `+18126906121`.
-- **Brand inputs:** No brand assets supplied beyond URL and phone; use a text-only Chronolyte AI end card. Fictional website demo brand: Northline HVAC. Client/commercial-facing usage; font licenses included beside font files.
-- **Narrative structure:** 0–2.4 s hook → 2.4–6.2 s home page → 6.2–10.3 s services page → 10.3–14.6 s booking page → 14.6–18.5 s page stack → 18.5–22 s CTA.
-- **Pipeline:** B, mixed but code-led: deterministic Canvas/WebGL animation + two generated still photographs, no stock footage.
+- **One-line concept:** A full-screen, edge-to-edge tour of a polished fictional HVAC site: Home → Services → How It Works → Booking → Chronolyte AI CTA.
+- **Platform / format:** Instagram Reel · vertical 9:16 · 1080×1920 · 30 fps · 22 s.
+- **Audience & goal / CTA:** HVAC owners and contractors; show what a vivid service-business site could look like and invite them to contact Chronolyte AI at `www.chronolyteai.site` or `+18126906121`.
+- **Brand inputs:** No user logo or palette supplied; use a text-only Chronolyte AI end card. Fictional website concept: Northline HVAC. Include font licences alongside local fonts.
+- **Pipeline:** Mixed, code-led: deterministic Canvas/WebGL animation with two generated HVAC photographs; no stock footage.
+- **Narrative:** 0–2.2 hook → 2.2–5.8 Home → 5.8–9.6 Services → 9.6–13.2 How It Works → 13.2–18.2 Booking → 18.2–22 CTA.
 
 ## 2. Theme & feel
-- **Mood words:** premium · kinetic · confident · human · clear.
-- **Theme / visual world:** deep midnight-blue atmosphere with cyan/aqua energy, warm amber photo light, a bright editorial website mockup, and a large mobile-device frame.
-- **Intensity / pacing:** 4/5; 0.5–1.5 s beats, smooth page scrolls, quick but readable route transitions, 3.5 s final hold.
-- **References:** no reference footage supplied; use the Motion Video Director skill's clarity-first UI motion and short-form hook structure, not copied artwork/audio.
-- **Must not feel like:** stock-template ad, unreadable micro-UI, glitch overload, unlicensed trending audio, or an HVAC company making unverifiable claims.
+- **Mood:** bold · bright · direct · premium · human.
+- **Visual world:** full-screen website pages, no device bezel or picture-in-picture; frosty white surfaces, saturated cobalt navigation, warm coral calls to action, sunshine-yellow highlights and generous HVAC photography.
+- **Pacing:** intensity 4/5; immediate visual hook, four readable routes, visible vertical scrolling, concise final contact hold.
+- **Must not feel like:** a phone floating in a dark void, a generic dark SaaS mockup, tiny UI, glitch overload, unlicensed trending audio or a real HVAC company making unverifiable claims.
 
 ## 3. Visual design system
-- **Palette (60–30–10):** atmosphere `#071923`; UI surface `#F5F6F1`; card/nav `#0D2937`; CTA aqua `#62E8D3`; warm accent `#FFB874`; primary text `#F7F8F4`; UI body `#253A43`; muted `#A8BCC2`.
-- **Typography:** display `Space Grotesk Variable`, `assets/fonts/space-grotesk/space-grotesk-latin-wght-normal.woff2`, 700; body `DM Sans Variable`, `assets/fonts/dm-sans/dm-sans-latin-opsz-normal.woff2`, 400–700. Local copies, OFL-1.1. Display candidates on the design board: Space Grotesk, Manrope, Outfit. Body candidates: DM Sans, Manrope, Space Grotesk. Chosen pairing: Space Grotesk + DM Sans.
-- **Sizes at 1080 px width:** hero display 88–112 px; section headline 68–78 px; caption 48–60 px; website headline 52–62 px; website body 24–30 px; UI labels 18–24 px.
-- **Text treatment:** short high-contrast lines; soft dark shadow for white type on glows; aqua only for emphasized words/buttons; no thin outlines or busy text effects.
-- **Layout:** headline/caption between y=240–390; device/site between y=405–1530; contact details held in central safe area. Avoid top 220 px, bottom 420 px and right-side UI strip. ≤6 words per caption group where practical.
-- **Textures & finish:** original WebGL gradient field, fine grid, mild grain/vignette, faint ambient specks; no flicker or hard flashes.
-- **Imagery:** generated editorial HVAC photos, no written text/logos. Keep photos behind independently rendered UI copy.
+- **Palette (60–30–10):** page/frost `#F4F7FD`; cobalt `#2C63F4`; deep navy `#10264A`; white `#FFFFFF`; coral CTA `#FF754A`; sunshine `#FFD05A`; sky `#DDF4FF`; mint `#C9F3E7`; body `#344762`.
+- **Typography:** display `Space Grotesk Variable` (`assets/fonts/space-grotesk/space-grotesk-latin-wght-normal.woff2`, OFL-1.1, 700–800); UI/body `DM Sans Variable` (`assets/fonts/dm-sans/dm-sans-latin-opsz-normal.woff2`, OFL-1.1, 500–800). Local fonts are awaited and checked before rendering.
+- **Sizes at 1080 px width:** hook 66–116 px; route headlines 76–96 px; body 24–30 px; nav and labels 18–22 px; contact rows 42–44 px.
+- **Text treatment:** high-contrast short lines; dark ink on light backgrounds, white/yellow on cobalt or darkened photography; no text baked into photos. Buttons use solid coral or cobalt fills and large labels.
+- **Layout:** the website fills the entire 1080×1920 frame edge-to-edge on every site route. The fixed full-width nav is 132 px high. Main content uses full-width photo panels and bold cards; keep critical overlay copy within platform safe areas. No device frame, outer dark margin or tiny inset website.
+- **Motion:** route transitions slide the full webpage across the entire canvas; homepage/services scroll vertically behind the fixed nav; cursor taps receive one clear ring; absolute-time animation only.
+- **Imagery:** generated HVAC technician beside a home heat pump and a close-up thermostat photo; crop with subject-aware focal points and use crisp independently rendered UI copy.
 
 ## 4. Motion language
-- **Easing:** `easeOutCubic` for entrances, `easeInOutCubic` for page transitions/scroll, restrained back-ease for the first device arrival; absolute-time seeded loops only.
-- **Text animation:** 180–320 ms masked/blur-to-sharp rise; 35–55 ms word/line stagger; one emphatic kinetic hook, then quieter captions.
-- **Signature devices:** slim cyan route/scroll indicator, bright booking button, cursor taps with single ring, layered page stack, cyan/amber light orbit.
-- **Transitions:** horizontal route swipe; fast but controlled 220–380 ms. Scene changes are on beat; no flashing strobe.
-- **Camera:** slight device yaw/pitch and 1–2% push, no uncontrolled shake.
+- **Easing:** `easeOutCubic` for type/card entrances; `easeInOutCubic` for page slides and scroll.
+- **Kinetic type:** hook lines arrive in three short, staggered beats; route labels remain inside the webpage design.
+- **Transitions:** one full-width horizontal page move, 460 ms; no device shrink/zoom-out. Scroll motion remains visible and comfortable to follow.
+- **Secondary motion:** soft color glow and subtle site-status pulse; no rapid flashes or camera shake.
 
 ## 5. Sound identity
 - **Voice:** none.
-- **SFX:** original procedurally synthesized short UI ticks, button taps, soft impacts and compact swishes at the cue times in `plan/beats.json`; dry and restrained; no bundled third-party recordings.
-- **Music:** none in v1. User can add a currently licensed Instagram track in-app if desired.
-- **Banned:** copyrighted/trending music copied into the export, long risers, repeated click spam, loud jump scares.
+- **SFX:** original procedural impacts, short swipes and restrained clicks from `plan/beats.json`; dry and synced to page/cursor actions.
+- **Music:** none in v2. Add a currently licensed Instagram sound in-app if desired.
+- **Banned:** copied trending/copyrighted audio, long risers, repeated click spam, jump scares.
 
 ## 6. Technical setup
-- **Render:** `npm run render`; deterministic `src/main.js`/`src/scenes/reel.js`, `plan/beats.json`, local Playwright Chromium + FFmpeg. Range preview CLI: `node src/render.js --from <s> --to <s> --fps <n> --scale <0–1> --out <dir> [--jpg]`.
-- **Key assets:** `assets/ai/hvac-technician-hero.jpg`, `assets/ai/hvac-thermostat-install.jpg`; local fonts in `assets/fonts/`; audio recipe in `scripts/generate_sfx.py`.
-- **Final target:** MP4 H.264, yuv420p, AAC 48 kHz, faststart; 1080×1920, 30 fps, 22 s.
+- **Render:** `npm run render`; deterministic `src/main.js` + `src/scenes/reel-v2.js`; `plan/beats.json`; local Playwright/Chromium + FFmpeg. Preview with `npm run preview`.
+- **Assets:** `assets/ai/hvac-technician-hero.jpg`, `assets/ai/hvac-thermostat-finished.jpg`; local OFL fonts under `assets/fonts/`; V2 procedural mix `assets/sfx/reel-sfx-v2.wav`.
+- **Final target:** H.264/yuv420p + AAC 48 kHz, faststart; 1080×1920, 30 fps, 22 s.
 
 ## 7. Do / Don't
-- **DO:** show three clearly distinct website routes, visibly scroll within pages, keep demo copy short, keep the contact pair readable for at least 3 s, use only the supplied real contact details.
-- **DON'T:** imply demo testimonials, real HVAC guarantees, conversion numbers, customer results, business hours, or fake contact details; bury CTA in platform UI zones; add tiny illegible copy.
+- **DO:** make every website route full-screen; show clear vertical scrolls and distinct pages; keep copy large; preserve exact phone digits and URL on the ending.
+- **DON'T:** show a phone mockup, miniaturize the site, put a device frame around it, invent testimonials/ratings/guarantees/availability, or place the CTA under platform overlays.
 
 ## 8. Feedback rules log
 | Date | Version | User said | Rule we keep |
 |---|---|---|---|
-| 2026-10-19 | v1 | Asked for a Reels-size HVAC website promo with scrolling/pages and Chronolyte AI contact at the end. | Prioritize visibly different routes, legible short copy, and exact contact details in the final hold. |
+| 2026-10-19 | v1 | Asked for an Instagram Reel showing an HVAC website, pages/scrolling and Chronolyte AI contact at the end. | Strong hook, legible site UI, accurate contact details and a proper 9:16 export. |
+| 2026-10-19 | v2 | Said the website visuals were not full-screen; asked for better visuals and colors. | Do not use phone/device mockups. The website itself must fill the full 1080×1920 frame edge-to-edge, with a visibly refreshed high-contrast palette. |
 
 ## 9. Decision history
-- 2026-10-19 · v1 · Chose a 22 s 9:16 no-VO/no-music treatment · the user supplied no narration or music reference; procedural SFX keep the UI tactile without copying audio.
+- 2026-10-19 · v1 · Dark navy/aqua outer field with a phone screen; user feedback identified the device frame as too small.
+- 2026-10-19 · v2 · Replaced the framed-phone layout with full-bleed native website pages; switched to frost/cobalt/coral/yellow and preserved all required contact details.
 
 ## 10. Continue checklist
 1. Read this file, `PROGRESS.md` and the end of `LOG.md`.
-2. Use `plan/beats.json` as the sole timing source.
-3. Keep palette/fonts/motion consistent and run a full contact-sheet readability check before changing or rendering new versions.
-4. Preserve the exact supplied website/phone at the CTA; do not introduce unverified business claims.
+2. Use `plan/beats.json` as the single active timing source.
+3. Keep the website edge-to-edge; do not restore the phone mockup.
+4. Inspect all preview contact sheets for full-frame coverage, readable type and safe areas before full export.
+5. Preserve the supplied `www.chronolyteai.site` and `+18126906121` at the ending.

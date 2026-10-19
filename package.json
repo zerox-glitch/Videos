@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "preview": "node src/render.js --from 0 --to 8 --fps 8 --scale 0.35 --out renders/previews --name \"HVAC Reel Preview v1\"",
-    "render": "node src/render.js",
-    "audio": "python3 src/make_audio.py"
+    "preview": "node src/render.js --from 0 --to 22 --fps 6 --scale 0.35 --out cache/v2-preview --name \"HVAC Full-Screen Reel Preview v2\" --audio assets/sfx/reel-sfx-v2.wav",
+    "render": "node src/render.js --from 0 --to 22 --fps 30 --scale 1 --out renders/final --name \"HVAC Website Reel v2\" --audio assets/sfx/reel-sfx-v2.wav",
+    "audio": "python3 scripts/generate_sfx.py assets/sfx/reel-sfx-v2.wav"
   },
   "devDependencies": {
     "@ffmpeg-installer/linux-x64": "4.1.0",
@@ -17,7 +17,7 @@
     "playwright-core": "1.64.1"
   },
   "version": "1.0.0",
-  "description": "A 22-second Instagram Reel promo for Chronolyte AI's web-design services, created as a high-energy mobile HVAC website tour. The fictional demo brand is **Northline HVAC**; the real CTA at the ending is `www.chronolyteai.site` and `+1 (812) 690-6121`.",
+  "description": "Full-screen 9:16 website showcase for Chronolyte AI's HVAC web-design services. V2 removes the device frame and uses edge-to-edge pages.",
   "main": "index.js",
   "dependencies": {
     "@ffprobe-installer/linux-x64": "5.2.0",

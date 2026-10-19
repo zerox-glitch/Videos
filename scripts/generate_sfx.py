@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "plan" / "beats.json"
-OUTPUT = ROOT / "assets" / "sfx" / "reel-sfx.wav"
+DEFAULT_OUTPUT = ROOT / "assets" / "sfx" / "reel-sfx.wav"
 SAMPLE_RATE = 48_000
 
 
@@ -78,6 +78,11 @@ def add_event(left: array, right: array, event: dict, seed: int) -> None:
 
 
 def main() -> None:
+    if len(sys.argv) > 2:
+        raise SystemExit("Usage: python3 scripts/generate_sfx.py [output.wav]")
+    output = Path(sys.argv[1]) if len(sys.argv) == 2 else DEFAULT_OUTPUT
+    if not output.is_absolute():
+        output = ROOT / output
     beats = json.loads(PLAN.read_text(encoding="utf-8"))
     frames = int(round(float(beats["duration"]) * SAMPLE_RATE))
     left = array("f", [0.0]) * frames
@@ -90,7 +95,7 @@ def main() -> None:
     peak = max(max(abs(value) for value in left), max(abs(value) for value in right), 1e-9)
     # Preserve headroom; normalization is fixed and deterministic, not frame-dependent.
     master = min(5.0, 0.42 / peak)
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(parents=True, exist_ok=True)
     pcm = array("h")
     actual_peak = 0.0
     for l, r in zip(left, right):
@@ -101,13 +106,13 @@ def main() -> None:
         pcm.append(int(round(rv * 32767)))
     if sys.byteorder != "little":
         pcm.byteswap()
-    with wave.open(str(OUTPUT), "wb") as wav:
+    with wave.open(str(output), "wb") as wav:
         wav.setnchannels(2)
         wav.setsampwidth(2)
         wav.setframerate(SAMPLE_RATE)
         wav.writeframes(pcm.tobytes())
     print(f"Generated {cue_index} original SFX cues · {frames / SAMPLE_RATE:.2f} s · 48 kHz stereo · peak {20 * math.log10(max(actual_peak, 1e-9)):.1f} dBFS")
-    print(f"Output: {OUTPUT.relative_to(ROOT)}")
+    print(f"Output: {output.relative_to(ROOT) if output.is_relative_to(ROOT) else output}")
 
 
 if __name__ == "__main__":

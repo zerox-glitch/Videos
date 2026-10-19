@@ -1,5 +1,6 @@
 import { W, H, BEATS } from './data.js';
-import { initReel, renderBackdrop, drawScene } from './scenes/reel.js';
+import { initReel, renderBackdrop } from './scenes/reel.js';
+import { drawSceneV2 } from './scenes/reel-v2.js';
 
 const params = new URLSearchParams(location.search);
 const scale = Math.max(0.05, Math.min(1, Number(params.get('scale')) || 1));
@@ -42,7 +43,7 @@ window.renderFrame = (time) => {
   ctx.setTransform(width / W, 0, 0, height / H, 0, 0);
   ctx.drawImage(backdrop, 0, 0, W, H);
   const beatNow = BEATS.find((item) => t >= item.start && t < item.end) || BEATS.at(-1);
-  drawScene(ctx, t, { W, H, scale, assets, beat: beatNow, beats: BEATS });
+  drawSceneV2(ctx, t, { W, H, scale, assets, beat: beatNow, beats: BEATS });
   return true;
 };
 window.grab = (type = 'image/png', quality = 0.92) => output.toDataURL(type, quality);

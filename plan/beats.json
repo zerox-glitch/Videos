@@ -1,79 +1,81 @@
 {
   "project": "Chronolyte AI HVAC Website Reel",
-  "version": "v1",
+  "version": "v2",
   "duration": 22,
   "fps": 30,
   "resolution": { "width": 1080, "height": 1920, "aspect": "9:16" },
-  "audio": { "voiceover": false, "music": false, "sound_design": "original procedural UI and transition SFX only" },
+  "audio": { "voiceover": false, "music": false, "sound_design": "original procedural UI and route-transition SFX only" },
   "beats": [
     {
       "id": "hook",
       "start": 0,
-      "end": 2.4,
+      "end": 2.2,
       "headline": "HVAC OWNERS / YOUR NEXT CUSTOMER / IS SCROLLING.",
-      "action": "Oversized kinetic type lands over a cool/warm WebGL atmosphere; a mobile-site preview rises into frame as a cursor snaps to a booking cue.",
+      "action": "Open immediately on a full-bleed HVAC website hero. No phone/device frame: the site fills the entire 1080x1920 canvas edge to edge. Warm hero photo, bright yellow/coral hook type, large Northline navigation and visible booking button.",
       "sound_cues": [
-        { "type": "impact", "time": 0.08, "gain": 0.34, "pan": 0 },
-        { "type": "tick", "time": 0.76, "gain": 0.20, "pan": -0.10 },
-        { "type": "swipe", "time": 1.96, "gain": 0.28, "pan": 0.12 }
+        { "type": "impact", "time": 0.06, "gain": 0.34, "pan": 0 },
+        { "type": "tick", "time": 0.70, "gain": 0.22, "pan": -0.08 },
+        { "type": "swipe", "time": 1.82, "gain": 0.28, "pan": 0.10 }
       ]
     },
     {
       "id": "home",
-      "start": 2.4,
-      "end": 6.2,
-      "caption": "FIRST IMPRESSIONS. ZERO GUESSWORK.",
-      "action": "The Northline HVAC mobile home page opens in a polished device frame. Scroll from the hero and clear booking CTA into service benefits.",
+      "start": 2.2,
+      "end": 5.8,
+      "caption": "COMFORT, BUILT AROUND YOU.",
+      "action": "Open the full-screen Home route; animate a visible vertical webpage scroll from a bold headline and CTA into a large HVAC photo and three vivid service cards.",
       "sound_cues": [
-        { "type": "swipe", "time": 2.42, "gain": 0.25, "pan": -0.10 },
-        { "type": "tap", "time": 4.82, "gain": 0.24, "pan": 0.08 }
+        { "type": "swipe", "time": 2.22, "gain": 0.25, "pan": -0.10 },
+        { "type": "tap", "time": 4.62, "gain": 0.25, "pan": 0.08 }
       ]
     },
     {
       "id": "services",
-      "start": 6.2,
-      "end": 10.3,
-      "caption": "EVERY SERVICE. EASY TO FIND.",
-      "action": "Tap Services; the route changes and the page slides in. Scroll through AC repair, heating, installation and indoor-air cards, then reveal a service photo.",
+      "start": 5.8,
+      "end": 9.6,
+      "caption": "HEATING. COOLING. FRESH AIR.",
+      "action": "Slide to a full-bleed Services route in saturated cobalt, with large high-contrast service cards and an edge-to-edge thermostat photo. Scroll the page to reveal its booking CTA.",
       "sound_cues": [
-        { "type": "swipe", "time": 6.22, "gain": 0.24, "pan": 0.10 },
-        { "type": "tap", "time": 8.32, "gain": 0.23, "pan": -0.08 }
+        { "type": "swipe", "time": 5.82, "gain": 0.25, "pan": 0.10 },
+        { "type": "tap", "time": 7.62, "gain": 0.23, "pan": -0.08 },
+        { "type": "swipe", "time": 8.92, "gain": 0.17, "pan": 0.08 }
+      ]
+    },
+    {
+      "id": "process",
+      "start": 9.6,
+      "end": 13.2,
+      "caption": "A CLEARER PATH TO COMFORT.",
+      "action": "Open the full-screen How It Works route with a wide photo hero and three large numbered steps. Keep the page surface edge to edge and the copy comfortably readable.",
+      "sound_cues": [
+        { "type": "swipe", "time": 9.62, "gain": 0.24, "pan": -0.06 },
+        { "type": "tick", "time": 11.30, "gain": 0.18, "pan": 0.08 }
       ]
     },
     {
       "id": "booking",
-      "start": 10.3,
-      "end": 14.6,
-      "caption": "TAP. CHOOSE. REQUEST A VISIT.",
-      "action": "Open the booking page, choose AC repair and a date, then tap Request a visit. Finish on a clearly demoed request-received state.",
+      "start": 13.2,
+      "end": 18.2,
+      "caption": "CHOOSE A SERVICE. PICK A TIME.",
+      "action": "Open a full-screen Booking route. A cursor selects service, date and time, then taps Request a Visit; a clearly labeled sample confirmation appears.",
       "sound_cues": [
-        { "type": "swipe", "time": 10.32, "gain": 0.24, "pan": -0.06 },
-        { "type": "tick", "time": 12.16, "gain": 0.19, "pan": 0.10 },
-        { "type": "confirm", "time": 13.52, "gain": 0.24, "pan": 0 }
-      ]
-    },
-    {
-      "id": "flow",
-      "start": 14.6,
-      "end": 18.5,
-      "caption": "ONE CLEAR NEXT STEP. ON EVERY PAGE.",
-      "action": "The home, services and booking pages peel into a kinetic 2.5D stack, then align into one responsive site.",
-      "sound_cues": [
-        { "type": "swipe", "time": 14.62, "gain": 0.20, "pan": 0.08 },
-        { "type": "impact", "time": 17.76, "gain": 0.18, "pan": 0 }
+        { "type": "swipe", "time": 13.22, "gain": 0.24, "pan": -0.08 },
+        { "type": "tap", "time": 14.32, "gain": 0.21, "pan": 0.08 },
+        { "type": "tick", "time": 15.20, "gain": 0.19, "pan": -0.08 },
+        { "type": "tap", "time": 16.04, "gain": 0.23, "pan": 0.08 },
+        { "type": "confirm", "time": 17.46, "gain": 0.24, "pan": 0 }
       ]
     },
     {
       "id": "cta",
-      "start": 18.5,
+      "start": 18.2,
       "end": 22,
       "headline": "NEED A WEBSITE LIKE THIS?",
-      "action": "Transition to a clean Chronolyte AI end card; hold the website and phone number together and readable for the full final three seconds.",
+      "action": "Resolve to a full-screen cobalt Chronolyte AI contact page. Keep www.chronolyteai.site and +1 (812) 690-6121 together, large and centered for at least three seconds.",
       "sound_cues": [
-        { "type": "swipe", "time": 18.52, "gain": 0.19, "pan": 0 },
-        { "type": "impact", "time": 19.20, "gain": 0.18, "pan": 0 },
-        { "type": "tick", "time": 19.82, "gain": 0.14, "pan": -0.10 },
-        { "type": "tick", "time": 20.40, "gain": 0.14, "pan": 0.10 }
+        { "type": "impact", "time": 18.22, "gain": 0.22, "pan": 0 },
+        { "type": "tick", "time": 19.30, "gain": 0.15, "pan": -0.08 },
+        { "type": "tick", "time": 20.15, "gain": 0.15, "pan": 0.08 }
       ]
     }
   ]
