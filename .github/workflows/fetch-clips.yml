@@ -1,0 +1,44 @@
+name: Fetch Source Clips
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - arena/51211cc8-videos
+    paths:
+      - '.github/workflows/fetch-clips.yml'
+      - 'scripts/remote_fetch.py'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: arena/51211cc8-videos
+          fetch-depth: 0
+
+      - name: Set up Python & FFmpeg & Deno
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          curl -fsSL https://deno.land/install.sh | sh
+          echo "$HOME/.deno/bin" >> $GITHUB_PATH
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -U pytubefix --pre "yt-dlp[default]" faster-whisper
+
+      - name: Download & extract viral clips + word timestamps
+        run: |
+          python3 scripts/remote_fetch.py
+
+      - name: Commit extracted source clips to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/source/
+          git commit -m "chore: add extracted Brian Cox source clips and word timestamps [skip ci]"
+          git push origin HEAD:arena/51211cc8-videos
