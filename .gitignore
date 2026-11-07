@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+/tmp_*/
+assets/source/*.mp4
+assets/source/*.txt
+Unselected files/

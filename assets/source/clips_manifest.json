@@ -507,13 +507,8 @@
         "end": 28.66
       },
       {
-        "word": "o",
+        "word": "o'clock",
         "start": 28.66,
-        "end": 28.76
-      },
-      {
-        "word": "'clock",
-        "start": 28.76,
         "end": 29.0
       },
       {
@@ -547,13 +542,8 @@
         "end": 30.08
       },
       {
-        "word": "o",
+        "word": "o'clock,",
         "start": 30.08,
-        "end": 30.22
-      },
-      {
-        "word": "'clock,",
-        "start": 30.22,
         "end": 30.4
       },
       {
@@ -957,12 +947,12 @@
         "end": 59.56
       },
       {
-        "word": "in",
+        "word": "and",
         "start": 59.56,
         "end": 59.78
       },
       {
-        "word": "Bank.",
+        "word": "back.",
         "start": 59.78,
         "end": 60.0
       },
@@ -1341,9 +1331,19 @@
         "end": 12.44
       },
       {
-        "word": "Together",
+        "word": "To",
         "start": 12.72,
         "end": 12.72
+      },
+      {
+        "word": "get",
+        "start": 12.72,
+        "end": 12.75
+      },
+      {
+        "word": "it,",
+        "start": 12.75,
+        "end": 12.78
       },
       {
         "word": "that's",
@@ -1606,8 +1606,13 @@
         "end": 29.84
       },
       {
-        "word": "smallest",
+        "word": "smaller",
         "start": 29.84,
+        "end": 30.01
+      },
+      {
+        "word": "this",
+        "start": 30.01,
         "end": 30.18
       },
       {
@@ -1921,7 +1926,7 @@
         "end": 50.76
       },
       {
-        "word": "plank",
+        "word": "Planck",
         "start": 50.76,
         "end": 50.98
       },
@@ -2166,7 +2171,7 @@
         "end": 66.18
       },
       {
-        "word": "plank",
+        "word": "Planck",
         "start": 66.18,
         "end": 66.42
       },
@@ -2351,7 +2356,7 @@
         "end": 78.64
       },
       {
-        "word": "plank",
+        "word": "Planck",
         "start": 78.64,
         "end": 78.92
       },
@@ -2541,13 +2546,8 @@
         "end": 93.74
       },
       {
-        "word": "plank",
+        "word": "Planck-sized",
         "start": 93.74,
-        "end": 94.12
-      },
-      {
-        "word": "-sized",
-        "start": 94.12,
         "end": 94.58
       },
       {
@@ -3170,7 +3170,7 @@
         "end": 27.7
       },
       {
-        "word": "moat",
+        "word": "mote",
         "start": 27.7,
         "end": 28.66
       },
