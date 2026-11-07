@@ -22,23 +22,52 @@ jobs:
           ref: arena/51211cc8-videos
           fetch-depth: 0
 
-      - name: Set up Python & FFmpeg & Deno
+      - name: Set up FFmpeg, Deno, Cloudflare WARP, Tor & bgutil POT provider
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-          curl -fsSL https://deno.land/install.sh | sh
-          echo "$HOME/.deno/bin" >> $GITHUB_PATH
-          python3 -m pip install --upgrade pip
-          python3 -m pip install -U pytubefix --pre "yt-dlp[default]" faster-whisper
+          mkdir -p assets/source
+          {
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg tor gpg lsb-release
+            sudo systemctl start tor || true
+
+            # Install Cloudflare WARP in localized SOCKS5 proxy mode (127.0.0.1:40000)
+            curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+            echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+            sudo apt-get update && sudo apt-get install -y cloudflare-warp || true
+            sudo systemctl start warp-svc || true
+            sleep 2
+            warp-cli --accept-tos registration new || yes | warp-cli registration new || true
+            warp-cli --accept-tos mode proxy || warp-cli mode proxy || warp-cli set-mode proxy || true
+            warp-cli --accept-tos proxy port 40000 || warp-cli proxy port 40000 || warp-cli set-proxy-port 40000 || true
+            warp-cli --accept-tos connect || warp-cli connect || true
+            sleep 4
+            curl -s -m 8 -x socks5h://127.0.0.1:40000 https://www.cloudflare.com/cdn-cgi/trace | grep -E "ip=|warp=" || echo "WARP trace failed"
+
+            # Start bgutil Proof-of-Origin Token provider container on 127.0.0.1:4416
+            docker run --name bgutil-provider -d --init -p 127.0.0.1:4416:4416 brainicism/bgutil-ytdlp-pot-provider || true
+            sleep 4
+
+            # Install Deno JS runtime for yt-dlp challenge solver
+            curl -fsSL https://deno.land/install.sh | sh
+            echo "$HOME/.deno/bin" >> $GITHUB_PATH
+
+            python3 -m pip install --upgrade pip
+            python3 -m pip install -U --pre "yt-dlp[default]" bgutil-ytdlp-pot-provider pytubefix "requests[socks]" PySocks faster-whisper
+          } 2>&1 | tee assets/source/setup_log.txt
 
       - name: Download & extract viral clips + word timestamps
         run: |
-          python3 scripts/remote_fetch.py
+          export PATH="$HOME/.deno/bin:$PATH"
+          set -o pipefail
+          python3 scripts/remote_fetch.py 2>&1 | tee assets/source/fetch_log.txt
 
-      - name: Commit extracted source clips to branch
+      - name: Commit extracted source clips and logs to branch
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin arena/51211cc8-videos || true
           git add assets/source/
-          git commit -m "chore: add extracted Brian Cox source clips and word timestamps [skip ci]"
+          git status
+          git diff --cached --quiet || git commit -m "chore: add extracted Brian Cox source clips and logs [skip ci]"
           git push origin HEAD:arena/51211cc8-videos

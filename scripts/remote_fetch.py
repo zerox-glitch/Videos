@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 Runs in GitHub Actions to fetch the 3 source chapters/clips and exact word-level
-timestamps from https://www.youtube.com/watch?v=kO41iURud9c.
+timestamps from https://www.youtube.com/watch?v=kO41iURud9c using Cloudflare WARP
+SOCKS5 proxy + bgutil PO-Token provider + yt-dlp/pytubefix fallbacks.
 """
 import json
 import os
+import socket
 import subprocess
 import sys
-import urllib.request
 from pathlib import Path
 
 VIDEO_ID = "kO41iURud9c"
@@ -15,10 +16,6 @@ YOUTUBE_URL = f"https://www.youtube.com/watch?v={VIDEO_ID}"
 OUT_DIR = Path("assets/source")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Chapter windows from the YouTube video description that contain our 3 viral moments:
-# 1) Double-slit experiment: 00:17:11 - 00:26:25 (viral moment around 19:00 - 24:30)
-# 2) Fundamental measurements / Planck length black hole: 00:39:00 - 00:45:15
-# 3) Humanity & cosmic meaning: 01:10:20 - 01:15:30
 CHAPTER_WINDOWS = [
     {"id": "window1_doubleslit", "start": 17 * 60 + 11, "end": 26 * 60 + 25},
     {"id": "window2_planck", "start": 39 * 60 + 0, "end": 45 * 60 + 15},
@@ -26,9 +23,64 @@ CHAPTER_WINDOWS = [
 ]
 
 
+def port_open(port: int) -> bool:
+    try:
+        with socket.create_connection(("127.0.0.1", port), timeout=1.5):
+            return True
+    except OSError:
+        return False
+
+
 def run(cmd, check=True):
     print(f"+ {' '.join(map(str, cmd))}", flush=True)
     return subprocess.run(cmd, check=check)
+
+
+def try_ytdlp(dest_mp4: Path) -> bool:
+    print("=== Trying yt-dlp strategies ===", flush=True)
+    proxies = []
+    if port_open(40000):
+        print("Detected WARP SOCKS5 proxy on 127.0.0.1:40000", flush=True)
+        proxies.append(["--proxy", "socks5h://127.0.0.1:40000"])
+    proxies.append([])
+    if port_open(9050):
+        print("Detected Tor SOCKS5 proxy on 127.0.0.1:9050", flush=True)
+        proxies.append(["--proxy", "socks5h://127.0.0.1:9050"])
+
+    pot_arg = []
+    if port_open(4416):
+        print("Detected bgutil POT provider on 127.0.0.1:4416", flush=True)
+        pot_arg = ["--extractor-args", "youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416"]
+
+    client_variants = [
+        [],
+        ["--extractor-args", "youtube:player-client=mweb,tv,web_safari"],
+        ["--extractor-args", "youtube:player-client=android_vr"],
+        ["--extractor-args", "youtube:player-client=ios,web_creator"],
+    ]
+
+    for p_args in proxies:
+        for c_args in client_variants:
+            if dest_mp4.exists():
+                dest_mp4.unlink()
+            cmd = [
+                "yt-dlp",
+                "-4",
+                "--no-playlist",
+                "--rm-cache-dir",
+                "-f", "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080]/best",
+                "--merge-output-format", "mp4",
+                "-o", str(dest_mp4),
+                *p_args,
+                *pot_arg,
+                *c_args,
+                YOUTUBE_URL,
+            ]
+            res = run(cmd, check=False)
+            if res.returncode == 0 and dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000:
+                print(f"SUCCESS with yt-dlp ({p_args} {c_args})!", flush=True)
+                return True
+    return False
 
 
 def try_pytubefix(dest_mp4: Path) -> bool:
@@ -39,123 +91,55 @@ def try_pytubefix(dest_mp4: Path) -> bool:
         print(f"pytubefix import failed: {e}", flush=True)
         return False
 
-    clients = ["ANDROID_VR", "IOS", "MWEB", "TV", "WEB"]
-    for client in clients:
-        try:
-            print(f"Trying pytubefix client={client}...", flush=True)
-            yt = YouTube(YOUTUBE_URL, client=client)
-            print(f"Title: {yt.title} ({yt.length}s)", flush=True)
+    proxy_configs = []
+    if port_open(40000):
+        proxy_configs.append({"http": "socks5h://127.0.0.1:40000", "https": "socks5h://127.0.0.1:40000"})
+    proxy_configs.append(None)
 
-            # Prefer 1080p adaptive mp4 + audio, fallback to 720p adaptive or progressive
-            v_stream = (
-                yt.streams.filter(adaptive=True, file_extension="mp4", res="1080p").first()
-                or yt.streams.filter(adaptive=True, file_extension="mp4", res="720p").first()
-                or yt.streams.filter(progressive=True, file_extension="mp4").order_by("resolution").desc().first()
-            )
-            if not v_stream:
-                continue
+    for proxies in proxy_configs:
+        for client in ["ANDROID_VR", "IOS", "MWEB", "WEB"]:
+            try:
+                print(f"Trying pytubefix client={client} proxies={proxies}...", flush=True)
+                yt = YouTube(YOUTUBE_URL, client=client, proxies=proxies)
+                print(f"Title: {yt.title} ({yt.length}s)", flush=True)
+                v_stream = (
+                    yt.streams.filter(adaptive=True, file_extension="mp4", res="1080p").first()
+                    or yt.streams.filter(adaptive=True, file_extension="mp4", res="720p").first()
+                    or yt.streams.filter(progressive=True, file_extension="mp4").order_by("resolution").desc().first()
+                )
+                if not v_stream:
+                    continue
+                if v_stream.is_progressive:
+                    p = v_stream.download(output_path="/tmp", filename="full_prog.mp4")
+                    Path(p).rename(dest_mp4)
+                    if dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000:
+                        return True
+                    continue
 
-            if v_stream.is_progressive:
-                v_stream.download(output_path="/tmp", filename="full.mp4")
-                Path("/tmp/full.mp4").rename(dest_mp4)
-                return dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000
-
-            a_stream = (
-                yt.streams.filter(only_audio=True, file_extension="mp4").order_by("abr").desc().first()
-                or yt.streams.filter(only_audio=True).order_by("abr").desc().first()
-            )
-            if not a_stream:
-                continue
-
-            v_path = v_stream.download(output_path="/tmp", filename="video_only")
-            a_path = a_stream.download(output_path="/tmp", filename="audio_only")
-            run([
-                "ffmpeg", "-y",
-                "-i", v_path,
-                "-i", a_path,
-                "-c:v", "copy",
-                "-c:a", "aac", "-b:a", "192k",
-                str(dest_mp4),
-            ])
-            if dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000:
-                print(f"Success with pytubefix client={client}!", flush=True)
-                return True
-        except Exception as e:
-            print(f"pytubefix client={client} failed: {e}", flush=True)
-    return False
-
-
-def try_ytdlp(dest_mp4: Path) -> bool:
-    print("=== Trying yt-dlp ===", flush=True)
-    client_Strategies = [
-        ["--extractor-args", "youtube:player_client=android_vr"],
-        ["--extractor-args", "youtube:player_client=ios,mweb"],
-        ["--extractor-args", "youtube:player_client=tv_embedded,web_creator"],
-        [],
-    ]
-    for extra in client_Strategies:
-        try:
-            cmd = [
-                "yt-dlp",
-                "--no-playlist",
-                "-f", "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1080]+bestaudio/best[height<=1080]",
-                "--merge-output-format", "mp4",
-                "-o", str(dest_mp4),
-                *extra,
-                YOUTUBE_URL,
-            ]
-            res = run(cmd, check=False)
-            if res.returncode == 0 and dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000:
-                print(f"Success with yt-dlp ({extra})!", flush=True)
-                return True
-        except Exception as e:
-            print(f"yt-dlp strategy {extra} error: {e}", flush=True)
-    return False
-
-
-def try_invidious_piped(dest_mp4: Path) -> bool:
-    print("=== Trying Piped / Invidious APIs ===", flush=True)
-    piped_instances = [
-        "https://pipedapi.kavin.rocks",
-        "https://api.piped.private.coffee",
-        "https://pipedapi.adminforge.de",
-        "https://pipedapi.in.projectsegfau.lt",
-    ]
-    for base in piped_instances:
-        try:
-            req = urllib.request.Request(
-                f"{base}/streams/{VIDEO_ID}",
-                headers={"User-Agent": "Mozilla/5.0"},
-            )
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-            v_streams = [
-                s for s in data.get("videoStreams", [])
-                if s.get("url") and s.get("height", 0) in (1080, 720)
-            ]
-            a_streams = [s for s in data.get("audioStreams", []) if s.get("url")]
-            if v_streams and a_streams:
-                v_streams.sort(key=lambda s: s.get("height", 0), reverse=True)
-                a_streams.sort(key=lambda s: s.get("bitrate", 0), reverse=True)
-                v_url = v_streams[0]["url"]
-                a_url = a_streams[0]["url"]
+                a_stream = (
+                    yt.streams.filter(only_audio=True, file_extension="mp4").order_by("abr").desc().first()
+                    or yt.streams.filter(only_audio=True).order_by("abr").desc().first()
+                )
+                if not a_stream:
+                    continue
+                v_path = v_stream.download(output_path="/tmp", filename="video_only.mp4")
+                a_path = a_stream.download(output_path="/tmp", filename="audio_only.m4a")
                 run([
                     "ffmpeg", "-y",
-                    "-i", v_url,
-                    "-i", a_url,
+                    "-i", v_path,
+                    "-i", a_path,
                     "-c:v", "copy",
                     "-c:a", "aac", "-b:a", "192k",
                     str(dest_mp4),
                 ])
                 if dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000:
                     return True
-        except Exception as e:
-            print(f"Piped {base} failed: {e}", flush=True)
+            except Exception as e:
+                print(f"pytubefix {client} ({proxies}) failed: {e}", flush=True)
     return False
 
 
 def find_phrase_window(words, start_phrases, end_phrases, default_start, default_end):
-    """Find exact start and end timestamps (relative to chapter window) matching target transcript phrases."""
     norm_words = [
         {
             "w": "".join(ch.lower() for ch in w["word"] if ch.isalnum()),
@@ -199,11 +183,7 @@ def find_phrase_window(words, start_phrases, end_phrases, default_start, default
 
 def main():
     full_mp4 = Path("/tmp/brian_cox_full.mp4")
-    ok = (
-        try_pytubefix(full_mp4)
-        or try_ytdlp(full_mp4)
-        or try_invidious_piped(full_mp4)
-    )
+    ok = try_ytdlp(full_mp4) or try_pytubefix(full_mp4)
     if not ok:
         print("ERROR: All download methods failed.", flush=True)
         sys.exit(1)
@@ -214,7 +194,6 @@ def main():
     print("Loading faster-whisper base.en model...", flush=True)
     model = WhisperModel("base.en", device="cpu", compute_type="int8")
 
-    # Target exact viral clips inside each chapter window
     clip_specs = [
         {
             "clip_id": "short1_double_slit",
@@ -271,7 +250,7 @@ def main():
             "-ss", str(win["start"]),
             "-t", str(dur),
             "-i", str(full_mp4),
-            "-c:v", "libx264", "-preset", "fast", "-crf", "19",
+            "-c:v", "libx264", "-preset", "fast", "-crf", "20",
             "-c:a", "aac", "-b:a", "192k",
             str(win_mp4),
         ])
@@ -300,9 +279,8 @@ def main():
             default_start=0.0,
             default_end=min(float(dur), 90.0),
         )
-        # Ensure clip is at least 62 seconds long
         if e_rel - s_rel < 62.0:
-            e_rel = min(float(dur), s_rel + 70.0)
+            e_rel = min(float(dur), s_rel + 72.0)
 
         out_clip = OUT_DIR / f"{spec['clip_id']}.mp4"
         clip_dur = e_rel - s_rel
@@ -311,13 +289,12 @@ def main():
             "-ss", f"{s_rel:.3f}",
             "-t", f"{clip_dur:.3f}",
             "-i", str(win_mp4),
-            "-c:v", "libx264", "-preset", "medium", "-crf", "19",
+            "-c:v", "libx264", "-preset", "medium", "-crf", "20",
             "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k",
             str(out_clip),
         ])
 
-        # Re-transcribe the exact trimmed clip so word timestamps are 0-based and frame-exact!
         clip_wav = Path(f"/tmp/{spec['clip_id']}.wav")
         run(["ffmpeg", "-y", "-i", str(out_clip), "-ac", "1", "-ar", "16000", str(clip_wav)])
         c_segs, _ = model.transcribe(str(clip_wav), word_timestamps=True, vad_filter=False)
