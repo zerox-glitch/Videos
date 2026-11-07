@@ -1,0 +1,180 @@
+{
+  "short1_double_slit": {
+    "active_variant": "A",
+    "caption_style": "clean_pop",
+    "available_caption_styles": [
+      "clean_pop",
+      "science_cyan",
+      "minimal_glow"
+    ],
+    "variations": {
+      "A": {
+        "label": "Andromeda Hook -> Feynman Sum -> Reality Payoff (Recommended)",
+        "title_lines": [
+          "ONE ELECTRON",
+          "TAKES EVERY PATH"
+        ],
+        "accent_words": [
+          "EVERY"
+        ],
+        "duration_sec": 51.92,
+        "hook_score": 106.0,
+        "payoff_score": 97.0,
+        "opening_text": "Does it really mean that the electron explores every possible route?",
+        "closing_text": "The particle does.",
+        "edl_segment_count": 13
+      },
+      "B": {
+        "label": "Tight 28s Andromeda Sprint",
+        "title_lines": [
+          "TO ANDROMEDA",
+          "AND BACK"
+        ],
+        "accent_words": [
+          "ANDROMEDA"
+        ],
+        "duration_sec": 25.1,
+        "hook_score": 106.0,
+        "payoff_score": 97.0,
+        "opening_text": "Does it really mean that the electron explores every possible route?",
+        "closing_text": "The particle does.",
+        "edl_segment_count": 7
+      },
+      "C": {
+        "label": "Quantum Clocks -> Every Route",
+        "title_lines": [
+          "HOW QUANTUM",
+          "PATHS CANCEL"
+        ],
+        "accent_words": [
+          "QUANTUM"
+        ],
+        "duration_sec": 51.91,
+        "hook_score": 62.0,
+        "payoff_score": 97.0,
+        "opening_text": "At every point on the screen you have to take them all, every possible path to that point, and just add them up.",
+        "closing_text": "The particle does.",
+        "edl_segment_count": 13
+      }
+    }
+  },
+  "short2_planck_black_hole": {
+    "active_variant": "A",
+    "caption_style": "clean_pop",
+    "available_caption_styles": [
+      "clean_pop",
+      "science_cyan",
+      "minimal_glow"
+    ],
+    "variations": {
+      "A": {
+        "label": "Quantum Wavelength -> Accidental Black Hole (Recommended)",
+        "title_lines": [
+          "LOOK TOO CLOSE,",
+          "MAKE A BLACK HOLE"
+        ],
+        "accent_words": [
+          "BLACK",
+          "HOLE"
+        ],
+        "duration_sec": 65.96,
+        "hook_score": 150.0,
+        "payoff_score": 95.0,
+        "opening_text": "Quantum mechanics tells us that the smaller the wavelength of the light, the higher the energy of the photons.",
+        "closing_text": "It would seem so, but this is where we get to, we're at the edge of our current understanding.",
+        "edl_segment_count": 17
+      },
+      "B": {
+        "label": "The Smallest Scale in Nature",
+        "title_lines": [
+          "REALITY'S SMALLEST",
+          "PIXEL LIMIT"
+        ],
+        "accent_words": [
+          "PIXEL"
+        ],
+        "duration_sec": 76.5,
+        "hook_score": 90.0,
+        "payoff_score": 95.0,
+        "opening_text": "The wavelength can't be bigger than the tiny thing, otherwise you won't see it.",
+        "closing_text": "It would seem so, but this is where we get to, we're at the edge of our current understanding.",
+        "edl_segment_count": 19
+      },
+      "C": {
+        "label": "Instant Paradox Cold-Open",
+        "title_lines": [
+          "WHY SPACE HAS",
+          "A RESOLUTION LIMIT"
+        ],
+        "accent_words": [
+          "RESOLUTION"
+        ],
+        "duration_sec": 55.75,
+        "hook_score": 116.0,
+        "payoff_score": 95.0,
+        "opening_text": "What happens if you try to approach something that's the Planck length?",
+        "closing_text": "It would seem so, but this is where we get to, we're at the edge of our current understanding.",
+        "edl_segment_count": 14
+      }
+    }
+  },
+  "short3_cosmic_meaning": {
+    "active_variant": "A",
+    "caption_style": "clean_pop",
+    "available_caption_styles": [
+      "clean_pop",
+      "science_cyan",
+      "minimal_glow"
+    ],
+    "variations": {
+      "A": {
+        "label": "Specks of Dust -> Cosmic Meaning (Recommended)",
+        "title_lines": [
+          "SPECKS OF DUST",
+          "THAT THINK"
+        ],
+        "accent_words": [
+          "THINK"
+        ],
+        "duration_sec": 64.92,
+        "hook_score": 224.0,
+        "payoff_score": 134.0,
+        "opening_text": "What are we?",
+        "closing_text": "But if it's the case, then we would be remarkably valuable notwithstanding our physical insignificance because we would be perhaps the only place in the Milky Way galaxy where collections of atoms have come together that can think and do science and have conversations like this in a very real sense bring meaning to an otherwise meaningless galaxy.",
+        "edl_segment_count": 6
+      },
+      "B": {
+        "label": "Are Humans Insignificant?",
+        "title_lines": [
+          "ARE HUMANS",
+          "MEANINGLESS?"
+        ],
+        "accent_words": [
+          "MEANINGLESS?"
+        ],
+        "duration_sec": 85.88,
+        "hook_score": 224.0,
+        "payoff_score": 134.0,
+        "opening_text": "What are we?",
+        "closing_text": "But if it's the case, then we would be remarkably valuable notwithstanding our physical insignificance because we would be perhaps the only place in the Milky Way galaxy where collections of atoms have come together that can think and do science and have conversations like this in a very real sense bring meaning to an otherwise meaningless galaxy.",
+        "edl_segment_count": 7
+      },
+      "C": {
+        "label": "Alone in 2 Trillion Galaxies",
+        "title_lines": [
+          "MEANING IN A",
+          "SILENT GALAXY"
+        ],
+        "accent_words": [
+          "MEANING"
+        ],
+        "duration_sec": 43.08,
+        "hook_score": 50.0,
+        "payoff_score": 134.0,
+        "opening_text": "Notwithstanding our physical insignificance, we may be remarkably valuable because the number of civilizations on the average in a particular galaxy, any given galaxy, might be less than one on the average.",
+        "closing_text": "But if it's the case, then we would be remarkably valuable notwithstanding our physical insignificance because we would be perhaps the only place in the Milky Way galaxy where collections of atoms have come together that can think and do science and have conversations like this in a very real sense bring meaning to an otherwise meaningless galaxy.",
+        "edl_segment_count": 3
+      }
+    }
+  }
+}

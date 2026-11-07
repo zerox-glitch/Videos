@@ -1,0 +1,246 @@
+[
+  {
+    "file": "shorts/Short 1 - Quantum Double Slit Andromeda.mp4",
+    "all_passed": true,
+    "duration_sec": 51.89,
+    "audio": {
+      "integrated_lufs": -14.7,
+      "true_peak_dbfs": -1.5
+    },
+    "checks": [
+      {
+        "check": "vertical_resolution_9x16",
+        "passed": true,
+        "detail": "1080x1920 @ 23.98fps, 51.89s (1244 frames)"
+      },
+      {
+        "check": "no_missing_or_frozen_frames",
+        "passed": true,
+        "detail": "black_frames=0, max_frozen_streak=6 frames"
+      },
+      {
+        "check": "vertical_speaker_centering",
+        "passed": true,
+        "detail": "median_speaker_x=504.0px (safe zone 360..720px)"
+      },
+      {
+        "check": "captions_clear_of_face",
+        "passed": true,
+        "detail": "caption_top_y=1395px vs p90_chin_y=672px"
+      },
+      {
+        "check": "short_clean_title",
+        "passed": true,
+        "detail": "words=5 ('ONE ELECTRON / TAKES EVERY PATH'), lines=2, hides_at=4.8s"
+      },
+      {
+        "check": "strong_opening_hook",
+        "passed": true,
+        "detail": "hook_score=106.0, speech_onset=0.08s, opening='Does it really mean that the electron explores every possible route?'"
+      },
+      {
+        "check": "satisfying_ending_payoff",
+        "passed": true,
+        "detail": "payoff_score=97.0, closing='The particle does.'"
+      },
+      {
+        "check": "caption_timing_and_chunk_size",
+        "passed": true,
+        "detail": "phrases=46, max_words_per_phrase=5, overlaps=0"
+      },
+      {
+        "check": "tightened_silences_and_cuts",
+        "passed": true,
+        "detail": "max_interword_silence=0.38s (target <= 0.65s)"
+      },
+      {
+        "check": "broadcast_audio_levels",
+        "passed": true,
+        "detail": "LUFS=-14.7 dB, peak=-1.5 dBFS"
+      }
+    ]
+  },
+  {
+    "file": "shorts/Short 2 - Planck Scale Black Hole.mp4",
+    "all_passed": true,
+    "duration_sec": 65.94,
+    "audio": {
+      "integrated_lufs": -13.4,
+      "true_peak_dbfs": -1.4
+    },
+    "checks": [
+      {
+        "check": "vertical_resolution_9x16",
+        "passed": true,
+        "detail": "1080x1920 @ 23.98fps, 65.94s (1581 frames)"
+      },
+      {
+        "check": "no_missing_or_frozen_frames",
+        "passed": true,
+        "detail": "black_frames=0, max_frozen_streak=0 frames"
+      },
+      {
+        "check": "vertical_speaker_centering",
+        "passed": true,
+        "detail": "median_speaker_x=535.5px (safe zone 360..720px)"
+      },
+      {
+        "check": "captions_clear_of_face",
+        "passed": true,
+        "detail": "caption_top_y=1395px vs p90_chin_y=666px"
+      },
+      {
+        "check": "short_clean_title",
+        "passed": true,
+        "detail": "words=7 ('LOOK TOO CLOSE, / MAKE A BLACK HOLE'), lines=2, hides_at=4.8s"
+      },
+      {
+        "check": "strong_opening_hook",
+        "passed": true,
+        "detail": "hook_score=150.0, speech_onset=0.08s, opening='Quantum mechanics tells us that the smaller the wavelength of the ligh'"
+      },
+      {
+        "check": "satisfying_ending_payoff",
+        "passed": true,
+        "detail": "payoff_score=95.0, closing='ut this is where we get to, we're at the edge of our current understanding.'"
+      },
+      {
+        "check": "caption_timing_and_chunk_size",
+        "passed": true,
+        "detail": "phrases=57, max_words_per_phrase=5, overlaps=0"
+      },
+      {
+        "check": "tightened_silences_and_cuts",
+        "passed": true,
+        "detail": "max_interword_silence=0.44s (target <= 0.65s)"
+      },
+      {
+        "check": "broadcast_audio_levels",
+        "passed": true,
+        "detail": "LUFS=-13.4 dB, peak=-1.4 dBFS"
+      }
+    ]
+  },
+  {
+    "file": "shorts/Short 3 - Why Humans Matter In Space.mp4",
+    "all_passed": true,
+    "duration_sec": 64.9,
+    "audio": {
+      "integrated_lufs": -14.0,
+      "true_peak_dbfs": -1.5
+    },
+    "checks": [
+      {
+        "check": "vertical_resolution_9x16",
+        "passed": true,
+        "detail": "1080x1920 @ 23.98fps, 64.90s (1556 frames)"
+      },
+      {
+        "check": "no_missing_or_frozen_frames",
+        "passed": true,
+        "detail": "black_frames=0, max_frozen_streak=9 frames"
+      },
+      {
+        "check": "vertical_speaker_centering",
+        "passed": true,
+        "detail": "median_speaker_x=489.0px (safe zone 360..720px)"
+      },
+      {
+        "check": "captions_clear_of_face",
+        "passed": true,
+        "detail": "caption_top_y=1395px vs p90_chin_y=673px"
+      },
+      {
+        "check": "short_clean_title",
+        "passed": true,
+        "detail": "words=5 ('SPECKS OF DUST / THAT THINK'), lines=2, hides_at=4.8s"
+      },
+      {
+        "check": "strong_opening_hook",
+        "passed": true,
+        "detail": "hook_score=224.0, speech_onset=0.08s, opening='What are we?'"
+      },
+      {
+        "check": "satisfying_ending_payoff",
+        "passed": true,
+        "detail": "payoff_score=134.0, closing='this in a very real sense bring meaning to an otherwise meaningless galaxy.'"
+      },
+      {
+        "check": "caption_timing_and_chunk_size",
+        "passed": true,
+        "detail": "phrases=45, max_words_per_phrase=5, overlaps=0"
+      },
+      {
+        "check": "tightened_silences_and_cuts",
+        "passed": true,
+        "detail": "max_interword_silence=0.22s (target <= 0.65s)"
+      },
+      {
+        "check": "broadcast_audio_levels",
+        "passed": true,
+        "detail": "LUFS=-14.0 dB, peak=-1.5 dBFS"
+      }
+    ]
+  },
+  {
+    "file": "shorts/variations/Short 1 - Variant B (Andromeda Sprint).mp4",
+    "all_passed": true,
+    "duration_sec": 25.07,
+    "audio": {
+      "integrated_lufs": -14.7,
+      "true_peak_dbfs": -1.5
+    },
+    "checks": [
+      {
+        "check": "vertical_resolution_9x16",
+        "passed": true,
+        "detail": "1080x1920 @ 23.98fps, 25.07s (601 frames)"
+      },
+      {
+        "check": "no_missing_or_frozen_frames",
+        "passed": true,
+        "detail": "black_frames=0, max_frozen_streak=0 frames"
+      },
+      {
+        "check": "vertical_speaker_centering",
+        "passed": true,
+        "detail": "median_speaker_x=501.0px (safe zone 360..720px)"
+      },
+      {
+        "check": "captions_clear_of_face",
+        "passed": true,
+        "detail": "caption_top_y=1395px vs p90_chin_y=666px"
+      },
+      {
+        "check": "short_clean_title",
+        "passed": true,
+        "detail": "words=4 ('TO ANDROMEDA / AND BACK'), lines=2, hides_at=4.8s"
+      },
+      {
+        "check": "strong_opening_hook",
+        "passed": true,
+        "detail": "hook_score=106.0, speech_onset=0.08s, opening='Does it really mean that the electron explores every possible route?'"
+      },
+      {
+        "check": "satisfying_ending_payoff",
+        "passed": true,
+        "detail": "payoff_score=97.0, closing='The particle does.'"
+      },
+      {
+        "check": "caption_timing_and_chunk_size",
+        "passed": true,
+        "detail": "phrases=17, max_words_per_phrase=5, overlaps=0"
+      },
+      {
+        "check": "tightened_silences_and_cuts",
+        "passed": true,
+        "detail": "max_interword_silence=0.19s (target <= 0.65s)"
+      },
+      {
+        "check": "broadcast_audio_levels",
+        "passed": true,
+        "detail": "LUFS=-14.7 dB, peak=-1.5 dBFS"
+      }
+    ]
+  }
+]
