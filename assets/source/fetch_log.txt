@@ -1,0 +1,50 @@
+=== Downloading full 1080p video via yt-dlp ===
++ yt-dlp -4 --no-playlist --no-progress --rm-cache-dir -f bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1080]+bestaudio/best[height<=1080]/best --merge-output-format mp4 -o /tmp/brian_cox_full.mp4 --proxy socks5h://127.0.0.1:40000 --extractor-args youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416 https://www.youtube.com/watch?v=kO41iURud9c
+Removing cache dir /home/runner/.cache/yt-dlp ..
+[youtube] Extracting URL: https://www.youtube.com/watch?v=kO41iURud9c
+[youtube] kO41iURud9c: Downloading webpage
+[youtube] kO41iURud9c: Downloading tv samsung player API JSON
+[youtube] kO41iURud9c: Downloading visionos player API JSON
+[youtube] kO41iURud9c: Downloading player f5321ed3-main
+[youtube] [jsc:deno] Solving JS challenges using deno
+[youtube] kO41iURud9c: Downloading m3u8 information
+[info] kO41iURud9c: Downloading 1 format(s): 616+140-16
+[hlsnative] Downloading m3u8 manifest
+[hlsnative] Total fragments: 861
+[download] Destination: /tmp/brian_cox_full.f616.mp4
+[download] Download completed
+[download] Destination: /tmp/brian_cox_full.f140-16.m4a
+[download] Download completed
+[Merger] Merging formats into "/tmp/brian_cox_full.mp4"
+Deleting original file /tmp/brian_cox_full.f140-16.m4a (pass -k to keep)
+Deleting original file /tmp/brian_cox_full.f616.mp4 (pass -k to keep)
+SUCCESS with yt-dlp (['--proxy', 'socks5h://127.0.0.1:40000'] [])!
+Downloaded full video: /tmp/brian_cox_full.mp4 (724.1 MB)
+Loading faster-whisper small.en model...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
++ ffmpeg -y -nostats -loglevel error -ss 1031 -t 554 -i /tmp/brian_cox_full.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /tmp/window1_doubleslit.wav
+Transcribing window1_doubleslit (554s audio)...
+[0;93m2026-11-07 19:04:54.095729961 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
+Matched start phrase 'and the prescription is very simple' at 373.78s
+Matched end phrase 'correct description of reality the particle does' at 450.02s
+Encoding short1_double_slit.mp4: start=1404.78s dur=76.24s...
++ ffmpeg -y -nostats -loglevel error -ss 1404.780 -t 76.240 -i /tmp/brian_cox_full.mp4 -c:v libx264 -preset fast -crf 21 -pix_fmt yuv420p -c:a aac -b:a 192k assets/source/short1_double_slit.mp4
++ ffmpeg -y -nostats -loglevel error -i assets/source/short1_double_slit.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /tmp/short1_double_slit.wav
+Saved assets/source/short1_double_slit.mp4: 76.24s (17.39 MB), 224 words
++ ffmpeg -y -nostats -loglevel error -ss 2340 -t 375 -i /tmp/brian_cox_full.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /tmp/window2_planck.wav
+Transcribing window2_planck (375s audio)...
+Matched start phrase 'so lets say we want to make an observation' at 144.78s
+Matched end phrase 'edge of our current understanding' at 254.96s
+Encoding short2_planck_black_hole.mp4: start=2484.78s dur=110.18s...
++ ffmpeg -y -nostats -loglevel error -ss 2484.780 -t 110.180 -i /tmp/brian_cox_full.mp4 -c:v libx264 -preset fast -crf 21 -pix_fmt yuv420p -c:a aac -b:a 192k assets/source/short2_planck_black_hole.mp4
++ ffmpeg -y -nostats -loglevel error -i assets/source/short2_planck_black_hole.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /tmp/short2_planck_black_hole.wav
+Saved assets/source/short2_planck_black_hole.mp4: 110.18s (19.68 MB), 324 words
++ ffmpeg -y -nostats -loglevel error -ss 4215 -t 315 -i /tmp/brian_cox_full.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /tmp/window3_meaning.wav
+Transcribing window3_meaning (315s audio)...
+Matched start phrase 'when we contemplate the size and the scale' at 12.17s
+Matched end phrase 'bring meaning to an otherwise meaningless galaxy' at 124.17s
+Encoding short3_cosmic_meaning.mp4: start=4227.17s dur=112.00s...
++ ffmpeg -y -nostats -loglevel error -ss 4227.170 -t 112.000 -i /tmp/brian_cox_full.mp4 -c:v libx264 -preset fast -crf 21 -pix_fmt yuv420p -c:a aac -b:a 192k assets/source/short3_cosmic_meaning.mp4
++ ffmpeg -y -nostats -loglevel error -i assets/source/short3_cosmic_meaning.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /tmp/short3_cosmic_meaning.wav
+Saved assets/source/short3_cosmic_meaning.mp4: 112.00s (21.34 MB), 272 words
+All 3 clips and word timestamps generated successfully!
