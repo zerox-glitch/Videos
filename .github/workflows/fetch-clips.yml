@@ -1,6 +1,7 @@
 name: Fetch Source Clips
 
 on:
+  # Manual trigger (requires Actions write scope on the token).
   workflow_dispatch:
     inputs:
       video_id:
@@ -23,6 +24,7 @@ on:
         description: Maximum clip length in seconds (clips mode)
         required: true
         default: '20.0'
+  # Push trigger: a new/changed requests/*.json file triggers a fetch for that video.
   push:
     branches:
       - arena/51211cc8-videos
@@ -31,17 +33,16 @@ on:
       - 'scripts/remote_fetch.py'
       - 'requests/**'
 
+permissions:
+  contents: write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-        with:
-          ref: arena/51211cc8-videos
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - name: Set up FFmpeg, Deno, Cloudflare WARP & bgutil POT provider
+      - name: Set up FFmpeg, Cloudflare WARP & bgutil POT provider
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg gpg lsb-release
@@ -65,46 +66,18 @@ jobs:
 
           python3 -m pip install -q --upgrade pip
           python3 -m pip install -q -U --pre "yt-dlp[default]"
-          python3 -m pip install -q bgutil-ytdlp-pot-provider PySocks faster-whisper numpy
-
-      - name: Resolve fetch parameters (request file or dispatch inputs)
-        id: params
-        run: |
-          REQUEST="$(ls requests/*.json 2>/dev/null | sort | tail -1 || true)"
-          if [ -n "$REQUEST" ]; then
-            echo "Using request file: $REQUEST"
-            python3 - "$REQUEST" <<'PY'
-import json, sys, os
-with open(sys.argv[1]) as f:
-    r = json.load(f)
-for k, v in {
-    "video_id": r.get("video_id", "kO41iURud9c"),
-    "mode": r.get("mode", "window"),
-    "threshold": str(r.get("threshold", 0.35)),
-    "min_clip": str(r.get("min_clip", 2.0)),
-    "max_clip": str(r.get("max_clip", 20.0)),
-}.items():
-    with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
-        fh.write(f"{k}={v}\n")
-PY
-          else
-            echo "video_id=${{ github.event.inputs.video_id }}" >> $GITHUB_OUTPUT
-            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-            echo "threshold=${{ github.event.inputs.scene_threshold }}" >> $GITHUB_OUTPUT
-            echo "min_clip=${{ github.event.inputs.min_clip }}" >> $GITHUB_OUTPUT
-            echo "max_clip=${{ github.event.inputs.max_clip }}" >> $GITHUB_OUTPUT
-          fi
+          python3 -m pip install -q bgutil-ytdlp-pot-provider PySocks
 
       - name: Download & extract clips / word timestamps
         run: |
           export PATH="$HOME/.deno/bin:$PATH"
           set -o pipefail
           python3 scripts/remote_fetch.py \
-            --video-id "${{ steps.params.outputs.video_id }}" \
-            --mode "${{ steps.params.outputs.mode }}" \
-            --threshold "${{ steps.params.outputs.threshold }}" \
-            --min-clip "${{ steps.params.outputs.min_clip }}" \
-            --max-clip "${{ steps.params.outputs.max_clip }}" \
+            --video-id '${{ github.event.inputs.video_id }}' \
+            --mode '${{ github.event.inputs.mode }}' \
+            --threshold '${{ github.event.inputs.scene_threshold }}' \
+            --min-clip '${{ github.event.inputs.min_clip }}' \
+            --max-clip '${{ github.event.inputs.max_clip }}' \
             2>&1 | tee assets/source/fetch_log.txt
 
       - name: Commit extracted clips to branch
@@ -113,7 +86,7 @@ PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin arena/51211cc8-videos || true
-          git add -f assets/source/window1_doubleslit_full.mp4 assets/source/window1_doubleslit_full.json assets/source/fetch_log.txt || true
+          git add -f assets/source/window1_doubleslit_full.mp4 assets/source/window1_doubleslit_full.json assets/source/fetch_log.txt assets/source/fetch_diagnostics.txt || true
           git add clips/ || true
           git diff --cached --quiet || git commit -m "chore: fetch ${{ github.event.inputs.mode }} for ${{ github.event.inputs.video_id }} [skip ci]"
           git push origin HEAD:arena/51211cc8-videos

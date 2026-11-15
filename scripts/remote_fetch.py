@@ -269,6 +269,16 @@ def fetch_clips(video_id: str, threshold: float, min_clip: float,
     print(f"Wrote {manifest_path} — {len(manifest_entries)} caption-free clips", flush=True)
 
 
+def latest_request() -> dict:
+    """Return the most recently pushed requests/*.json, if any."""
+    import glob as _glob
+    files = sorted(_glob.glob("requests/*.json"))
+    if not files:
+        return {}
+    with open(files[-1], encoding="utf-8") as f:
+        return json.load(f)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--video-id", default=DEFAULT_VIDEO_ID)
@@ -277,6 +287,17 @@ def main() -> None:
     parser.add_argument("--min-clip", type=float, default=2.0)
     parser.add_argument("--max-clip", type=float, default=20.0)
     args = parser.parse_args()
+
+    # A pushed requests/*.json file overrides CLI inputs — this is how a
+    # push to the branch triggers a fetch for an arbitrary video.
+    req = latest_request()
+    if req:
+        args.video_id = req.get("video_id", args.video_id)
+        args.mode = req.get("mode", args.mode)
+        args.threshold = float(req.get("threshold", args.threshold))
+        args.min_clip = float(req.get("min_clip", args.min_clip))
+        args.max_clip = float(req.get("max_clip", args.max_clip))
+        print(f"Using request file: {args.video_id} [{args.mode}]", flush=True)
 
     if args.mode == "clips":
         fetch_clips(args.video_id, args.threshold, args.min_clip, args.max_clip)
