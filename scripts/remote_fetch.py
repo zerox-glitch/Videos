@@ -46,21 +46,37 @@ def ffprobe_duration(mp4: Path) -> float:
     return float(out)
 
 
-def download_youtube(youtube_url: str, dest_mp4: Path) -> bool:
+def download_youtube(youtube_url: str, dest_mp4: Path, log: list) -> bool:
+    """Try several proxy / POT / player-client combos; log each attempt."""
     proxies = []
     if port_open(40000):
-        proxies.append(["--proxy", "socks5h://127.0.0.1:40000"])
-    proxies.append([])
+        proxies.append(("warp-socks5", ["--proxy", "socks5h://127.0.0.1:40000"]))
+    proxies.append(("direct", []))
 
     pot_arg = []
     if port_open(4416):
         pot_arg = ["--extractor-args",
                    "youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416"]
 
-    for p_args in proxies:
-        for c_args in [[], ["--extractor-args", "youtube:player-client=mweb,tv,web_safari"]]:
+    client_sets = [
+        ("mweb,tv,web_safari",
+         ["--extractor-args", "youtube:player-client=mweb,tv,web_safari"]),
+        ("android",
+         ["--extractor-args", "youtube:player-client=android"]),
+        ("ios",
+         ["--extractor-args", "youtube:player-client=ios"]),
+        ("tv_embedded",
+         ["--extractor-args", "youtube:player-client=tv_embedded"]),
+        ("web_embedded",
+         ["--extractor-args", "youtube:player-client=web_embedded"]),
+        ("default", []),
+    ]
+
+    for p_name, p_args in proxies:
+        for c_name, c_args in client_sets:
             if dest_mp4.exists():
                 dest_mp4.unlink()
+            tag = f"{p_name}+{c_name}"
             cmd = [
                 "yt-dlp", "-4", "--no-playlist", "--no-progress", "--rm-cache-dir",
                 "-f", "bestvideo[height<=720]+bestaudio/best[height<=720]/best",
@@ -69,10 +85,21 @@ def download_youtube(youtube_url: str, dest_mp4: Path) -> bool:
                 *p_args, *pot_arg, *c_args,
                 youtube_url,
             ]
+            log.append(f"[try] {tag}")
             res = run(cmd, check=False)
+            detail = ""
             if res.returncode == 0 and dest_mp4.exists() and dest_mp4.stat().st_size > 5_000_000:
+                log.append(f"[ok] {tag}")
                 return True
+            if dest_mp4.exists():
+                detail = f" ({dest_mp4.stat().st_size} bytes)"
+            log.append(f"[fail] {tag}{detail} rc={res.returncode}")
     return False
+
+
+def write_diagnostics(log: list, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(log) + "\n", encoding="utf-8")
 
 
 def scene_cuts(video_mp4: Path, threshold: float) -> list:
@@ -144,7 +171,9 @@ def fetch_window(video_id: str) -> None:
     youtube_url = f"https://www.youtube.com/watch?v={video_id}"
     full_mp4 = Path("/tmp/yt_full.mp4")
 
-    if not download_youtube(youtube_url, full_mp4):
+    log: list = []
+    if not download_youtube(youtube_url, full_mp4, log):
+        write_diagnostics(log, OUT_DIR / "fetch_diagnostics.txt")
         print("ERROR: Download failed.", file=sys.stderr)
         sys.exit(1)
 
@@ -211,7 +240,10 @@ def fetch_clips(video_id: str, threshold: float, min_clip: float,
     out_dir.mkdir(parents=True, exist_ok=True)
 
     full_mp4 = Path("/tmp/yt_full.mp4")
-    if not download_youtube(youtube_url, full_mp4):
+
+    log: list = []
+    if not download_youtube(youtube_url, full_mp4, log):
+        write_diagnostics(log, OUT_DIR / "fetch_diagnostics.txt")
         print("ERROR: Download failed.", file=sys.stderr)
         sys.exit(1)
 
