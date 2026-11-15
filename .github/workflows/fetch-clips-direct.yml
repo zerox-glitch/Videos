@@ -1,6 +1,7 @@
 name: Fetch Clips Direct
 
 on:
+  # v1 trigger probe
   push:
     branches:
       - arena/51211cc8-videos
