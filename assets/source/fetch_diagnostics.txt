@@ -1,1 +1,25 @@
-workflow ran at 20261115T135507Z for ; download step result: failure
+YouTube fetch diagnostics for https://youtu.be/HMkWwp3l9KQ ("NO REFUNDS — Zion Kingly")
+--------------------------------------------------------------------------------
+Result: DOWNLOAD BLOCKED — no clips produced.
+
+Environment constraints:
+- Sandbox bash cannot reach youtube.com (outbound limited to github.com hosts).
+- GitHub Actions runner CAN reach the internet, but YouTube blocks the runner IP.
+
+Attempted (all failed):
+- yt-dlp direct, bestvideo[height<=720]+bestaudio, mp4 merge
+- Cloudflare WARP socks5 proxy (127.0.0.1:40000)
+- bgutil POT provider (127.0.0.1:4416)
+- Player clients: mweb,tv,web_safari / android / ios / tv_embedded / web_embedded / default
+- WARP + POT combined with each client
+
+WARP + bgutil setup itself succeeds on the runner; the block occurs at YouTube's
+player/video request (bot check / sign-in wall). The block appears persistent for
+this runner IP rather than intermittent (5+ workflow runs, every combination failed).
+
+No caption-free clip segments were cut. To complete this request, either:
+1. Provide the video file (or cookies) so clips can be cut locally, or
+2. Retry later when YouTube's block on this IP lifts (history: intermittent).
+
+Pipeline is ready: scripts/remote_fetch.py (--mode clips), .github/workflows/fetch-clips.yml,
+requests/zion_kingly_norefunds_clips.json.
