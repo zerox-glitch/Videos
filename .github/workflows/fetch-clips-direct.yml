@@ -61,4 +61,4 @@ jobs:
           git add -f assets/source/fetch_diagnostics.txt || true
           git add clips/ || true
           git diff --cached --quiet || git commit -m "chore: fetch clips for ${{ github.event.inputs.video_id }} [skip ci]"
-          git push origin HEAD:arena/51211cc8-videos || true
+          git push origin HEAD:arena/51211cc8-videos
