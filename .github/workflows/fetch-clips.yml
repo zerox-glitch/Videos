@@ -31,9 +31,6 @@ on:
       - 'scripts/remote_fetch.py'
       - 'requests/**'
 
-permissions:
-  contents: write
-
 jobs:
   fetch:
     runs-on: ubuntu-latest
