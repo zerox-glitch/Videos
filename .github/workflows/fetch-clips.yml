@@ -29,6 +29,7 @@ on:
     paths:
       - '.github/workflows/fetch-clips.yml'
       - 'scripts/remote_fetch.py'
+      - 'requests/**'
 
 permissions:
   contents: write
@@ -69,16 +70,44 @@ jobs:
           python3 -m pip install -q -U --pre "yt-dlp[default]"
           python3 -m pip install -q bgutil-ytdlp-pot-provider PySocks faster-whisper numpy
 
+      - name: Resolve fetch parameters (request file or dispatch inputs)
+        id: params
+        run: |
+          REQUEST="$(ls requests/*.json 2>/dev/null | sort | tail -1 || true)"
+          if [ -n "$REQUEST" ]; then
+            echo "Using request file: $REQUEST"
+            python3 - "$REQUEST" <<'PY'
+import json, sys, os
+with open(sys.argv[1]) as f:
+    r = json.load(f)
+for k, v in {
+    "video_id": r.get("video_id", "kO41iURud9c"),
+    "mode": r.get("mode", "window"),
+    "threshold": str(r.get("threshold", 0.35)),
+    "min_clip": str(r.get("min_clip", 2.0)),
+    "max_clip": str(r.get("max_clip", 20.0)),
+}.items():
+    with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+        fh.write(f"{k}={v}\n")
+PY
+          else
+            echo "video_id=${{ github.event.inputs.video_id }}" >> $GITHUB_OUTPUT
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+            echo "threshold=${{ github.event.inputs.scene_threshold }}" >> $GITHUB_OUTPUT
+            echo "min_clip=${{ github.event.inputs.min_clip }}" >> $GITHUB_OUTPUT
+            echo "max_clip=${{ github.event.inputs.max_clip }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Download & extract clips / word timestamps
         run: |
           export PATH="$HOME/.deno/bin:$PATH"
           set -o pipefail
           python3 scripts/remote_fetch.py \
-            --video-id '${{ github.event.inputs.video_id }}' \
-            --mode '${{ github.event.inputs.mode }}' \
-            --threshold '${{ github.event.inputs.scene_threshold }}' \
-            --min-clip '${{ github.event.inputs.min_clip }}' \
-            --max-clip '${{ github.event.inputs.max_clip }}' \
+            --video-id "${{ steps.params.outputs.video_id }}" \
+            --mode "${{ steps.params.outputs.mode }}" \
+            --threshold "${{ steps.params.outputs.threshold }}" \
+            --min-clip "${{ steps.params.outputs.min_clip }}" \
+            --max-clip "${{ steps.params.outputs.max_clip }}" \
             2>&1 | tee assets/source/fetch_log.txt
 
       - name: Commit extracted clips to branch
