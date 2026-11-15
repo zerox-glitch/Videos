@@ -2,6 +2,27 @@ name: Fetch Source Clips
 
 on:
   workflow_dispatch:
+    inputs:
+      video_id:
+        description: YouTube video ID or URL to fetch
+        required: true
+        default: 'kO41iURud9c'
+      mode:
+        description: window (timed window + transcript) or clips (scene-cut, no captions)
+        required: true
+        default: 'window'
+      scene_threshold:
+        description: Scene-change sensitivity for clips mode (0.1-1.0, higher = fewer cuts)
+        required: true
+        default: '0.35'
+      min_clip:
+        description: Minimum clip length in seconds (clips mode)
+        required: true
+        default: '2.0'
+      max_clip:
+        description: Maximum clip length in seconds (clips mode)
+        required: true
+        default: '20.0'
   push:
     branches:
       - arena/51211cc8-videos
@@ -48,19 +69,25 @@ jobs:
           python3 -m pip install -q -U --pre "yt-dlp[default]"
           python3 -m pip install -q bgutil-ytdlp-pot-provider PySocks faster-whisper numpy
 
-      - name: Download & extract viral clips + word timestamps
+      - name: Download & extract clips / word timestamps
         run: |
           export PATH="$HOME/.deno/bin:$PATH"
-          mkdir -p assets/source
           set -o pipefail
-          python3 scripts/remote_fetch.py 2>&1 | tee assets/source/fetch_log.txt
+          python3 scripts/remote_fetch.py \
+            --video-id '${{ github.event.inputs.video_id }}' \
+            --mode '${{ github.event.inputs.mode }}' \
+            --threshold '${{ github.event.inputs.scene_threshold }}' \
+            --min-clip '${{ github.event.inputs.min_clip }}' \
+            --max-clip '${{ github.event.inputs.max_clip }}' \
+            2>&1 | tee assets/source/fetch_log.txt
 
-      - name: Commit extracted source clips to branch
+      - name: Commit extracted clips to branch
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin arena/51211cc8-videos || true
-          git add -f assets/source/window1_doubleslit_full.mp4 assets/source/window1_doubleslit_full.json assets/source/fetch_log.txt || git add -f assets/source/
-          git diff --cached --quiet || git commit -m "chore: fetch full double-slit window for stronger hook selection [skip ci]"
+          git add -f assets/source/window1_doubleslit_full.mp4 assets/source/window1_doubleslit_full.json assets/source/fetch_log.txt || true
+          git add clips/ || true
+          git diff --cached --quiet || git commit -m "chore: fetch ${{ github.event.inputs.mode }} for ${{ github.event.inputs.video_id }} [skip ci]"
           git push origin HEAD:arena/51211cc8-videos
