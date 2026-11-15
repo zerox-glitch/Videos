@@ -1,0 +1,14 @@
+name: Test Ping
+
+on:
+  push:
+    branches:
+      - arena/51211cc8-videos
+    paths:
+      - '.github/workflows/test-ping.yml'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "pong $(date -u +%H:%M:%S)"
