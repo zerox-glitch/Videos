@@ -1,0 +1,40 @@
+name: Fetch Clips Direct
+
+on:
+  push:
+    branches:
+      - arena/51211cc8-videos
+    paths:
+      - '.github/workflows/fetch-clips-direct.yml'
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: YouTube video ID or URL
+        required: true
+        default: 'https://youtu.be/HMkWwp3l9KQ'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg + yt-dlp
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q yt-dlp
+      - name: Download & cut caption-free clips
+        run: |
+          python3 scripts/remote_fetch.py \
+            --video-id '${{ github.event.inputs.video_id || 'https://youtu.be/HMkWwp3l9KQ' }}' \
+            --mode clips --threshold 0.35 --min-clip 2.0 --max-clip 20.0
+      - name: Commit clips to branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add clips/ || true
+          git diff --cached --quiet || git commit -m "chore: fetch clips for ${{ github.event.inputs.video_id }} [skip ci]"
+          git push origin HEAD:arena/51211cc8-videos || true
