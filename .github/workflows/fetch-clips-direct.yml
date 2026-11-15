@@ -1,7 +1,7 @@
 name: Fetch Clips Direct
 
 on:
-  # v4 trigger probe
+  # v5 trigger probe
   push:
     branches:
       - arena/51211cc8-videos
@@ -58,8 +58,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          echo "workflow ran at $(date -u +%Y%m%dT%H%M%SZ) for ${{ github.event.inputs.video_id }}; download step result: failure" > assets/source/fetch_diagnostics.txt
-          git add -f assets/source/fetch_diagnostics.txt
+          git add -f assets/source/fetch_diagnostics.txt || true
           git add clips/ || true
           git diff --cached --quiet || git commit -m "chore: fetch clips for ${{ github.event.inputs.video_id }} [skip ci]"
           git push origin HEAD:arena/51211cc8-videos
